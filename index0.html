@@ -6,124 +6,15 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1">
         <title>David McCullough</title>
 
-        <link rel="stylesheet" href="/css/style.scss">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!-- responsive -->
-        <link rel="stylesheet" href="responsive.css">
 
         <style>
 
         html,body {
             height:100%;
-        }
-
-        #profilePic {
-            object-fit: cover;
-            object-position: center;
-            width: 256px;
-            height: 256px;
-            top: 32px;
-        }
-
-        .skillbar {
-
-        }
-
-        .intro {
-            font: normal 24px/30px Arial;
-            color: #999;
-            height: 30px;
-        }
-
-        .introText {
-            height: 30px;
-            float: left;
-            margin-right: 0.3em;
-        }
-
-        .introAnimated {
-            float: left;
-            overflow: hidden;
-            position: relative;
-            height: 30px;
-        }
-
-        span1 {
-            display: inline-block;
-            color: #08CE78;
-            position: relative;
-            white-space: nowrap;
-            top: 0;
-            left: 0;
-            animation: move 7s;
-            animation-iteration-count: infinite;
-            animation-delay: 1.5s;
-        }
-
-        @keyframes move {
-            0%  { top: 0px; }
-            20% { top: -30px; }
-            40% { top: -60px; }
-            60% { top: -90px; }
-            80% { top: -120px; }
-            99.99% { top: -150px; }
-            100% { top: 0px; }
-        }
-
-
-
-        .collapse.in {
-            visibility: visible;
-        }
-
-        .text-small {
-            font-size: 12px;
-        }
-
-        .bg-transparent {
-            background-color: transparent !important;
-        }
-
-        .bg-dark {
-          background-color: #343a40 !important;
-        }
-
-        .text-default {
-         color: #08CE78 !important;
-        }
-
-        a.text-default:focus, a.text-default:hover {
-          color: #08CE78 !important;
-        }
-
-        .progress {
-          display: -ms-flexbox;
-          display: flex;
-          height: 1rem;
-          width: 80%;
-
-          overflow: hidden;
-          font-size: 0.75rem;
-          background-color: #e9ecef;
-          border-radius: 0rem;
-        }
-
-        .progress-bar {
-          color: #fff;
-          background-color: #343a40;
-          transition-duration: 2s;
-        }
-
-        .clear-float {
-            clear:both;
-        }
-
-        .wrap-grid {
-          display: grid;
-          vertical-align: center;
-          align-items: center;
         }
 
 
@@ -132,12 +23,25 @@
     </head>
 
     <body>
-    <section class="banner cf">
+    <section class="banner blocktext">
         <div class="wrapper">
-            <h1>Cool.</h1>
+            <h1 class=""><b>Hi there, I'm<br>David McCullough.</b></h1>
+            <h3 class="intro"><span class="introText">I am a</span>
+            <b class="introAnimated">
+              <span1>
+                software engineer<br>
+                UX designer<br>
+                game designer<br>
+                pixel artist<br>
+                huge idiot<br>
+                software engineer
+                </span1>
+            </b>
+        </h3>
         </div>
-        <h1>cool</h1>
+
     </section>
+    <h1>cool</h1>
 
 
 

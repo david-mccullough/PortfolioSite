@@ -1,0 +1,80 @@
+:root {
+    --color-dark: #414148;
+    --color-white: #ffffff;
+}
+
+.wrapper {
+    width: 960px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.logo
+{
+    background: white;
+}
+
+.banner {
+    padding: 5em 0;
+    left: 50%;
+}
+
+h1 {
+    color: var(--color-dark);
+    font-size: 5em;
+}
+
+.banner h1 {
+    color: var(--color-dark);
+    text-align: center;
+    display: inline;
+    font-size: 2em;
+
+}
+
+.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 4em
+}
+
+.intro {
+    font: normal 24px/30px Arial;
+    color: #999;
+    height: 30px;
+}
+
+.introText {
+    height: 30px;
+    float: left;
+    margin-right: 0.3em;
+}
+
+.introAnimated {
+    float: left;
+    overflow: hidden;
+    position: relative;
+    height: 30px;
+}
+
+span1 {
+    display: inline-block;
+    color: #08CE78;
+    position: relative;
+    white-space: nowrap;
+    top: 0;
+    left: 0;
+    animation: move 7s;
+    animation-iteration-count: infinite;
+    animation-delay: 1.5s;
+}
+
+@keyframes move {
+    0%  { top: 0px; }
+    20% { top: -30px; }
+    40% { top: -60px; }
+    60% { top: -90px; }
+    80% { top: -120px; }
+    99.99% { top: -150px; }
+    100% { top: 0px; }
+}
