@@ -6,44 +6,162 @@
         <meta name="viewport" content="width = device-width, initial-scale = 1">
         <title>David McCullough</title>
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-        <style>
-
-        html,body {
-            height:100%;
-        }
-
-
-        </style>
+        <link href="assets/css/toolkit-startup.css" rel="stylesheet">
 
     </head>
 
     <body>
-    <section class="banner blocktext">
-        <div class="wrapper">
-            <h1 class=""><b>Hi there, I'm<br>David McCullough.</b></h1>
-            <h3 class="intro"><span class="introText">I am a</span>
-            <b class="introAnimated">
-              <span1>
-                software engineer<br>
-                UX designer<br>
-                game designer<br>
-                pixel artist<br>
-                huge idiot<br>
-                software engineer
-                </span1>
-            </b>
-        </h3>
+
+      <div class="stage-shelf stage-shelf-right hidden" id="sidebar">
+        <ul class="nav nav-bordered nav-stacked flex-column">
+          <li class="nav-header">Examples</li>
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Startup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="minimal/index.html">Minimal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="bold/index.html">Bold</a>
+          </li>
+          <li class="nav-divider"></li>
+          <li class="nav-header">Docs</li>
+          <li class="nav-item">
+            <a class="nav-link" href="docs/index.html">Toolkit</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://getbootstrap.com">Bootstrap</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="stage" id="stage">
+
+      <div class="block block-inverse block-fill-height app-header"
+           style="background-image: url(photoMe.jpg);">
+
+        <div class="container py-4 fixed-top app-navbar">
+        <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
+          <button
+            class="navbar-toggler navbar-toggler-right hidden-md-up"
+            type="button"
+            data-target="#stage"
+            data-toggle="stage"
+            data-distance="-250">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <a class="navbar-brand mr-auto" href="">
+            <strong style="background: #020200; padding: 12px; border-radius: 4px; color: #fff;">dm</strong>
+          </a>
+
+          <div class="hidden-sm-down text-uppercase">
+            <ul class="navbar-nav flex-column">
+              <li class="nav-item px-1 ">
+                <a class="nav-link" href="#">StartUp</a>
+              </li>
+              <li class="nav-item px-1 ">
+                <a class="nav-link" href="minimal/index.html">Minimal</a>
+              </li>
+              <li class="nav-item px-1 ">
+                <a class="nav-link" href="bold/index.html">Bold</a>
+              </li>
+              <li class="nav-item px-1 ">
+                <a class="nav-link" href="docs/index.html">Docs</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="block-xs-middle pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-10 col-lg-6">
+              <h1 class="block-titleData frequency">Analytics on demand.</h1>
+              <p class="lead mb-4 text-muted">Stop installing bloated scripts that all track the exact same things. Install one that does everything.</p>
+              <button class="btn btn-primary btn-lg">Try it now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="banner">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm align-self-center">
+              <div class="media">
+              <img class="mr-3 rounded-circle profilePic" src="photoMe.jpg" alt="Generic placeholder image">
+              <div class="media-body">
+                  <h1>Hi there, I'm<br><b>David McCullough.</b></h1>
+                  <h3 class="intro"><span class="introText">I am a</span>
+                  <b class="introAnimated">
+                    <span1>
+                      programmer<br>
+                      UX designer<br>
+                      game designer<br>
+                      pixel artist<br>
+                      huge idiot<br>
+                      programmer
+                      </span1>
+                  </b>
+                  </h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-sm">
+            nav here!
+          </div>
         </div>
 
+
+    </div>
+
     </section>
-    <h1>cool</h1>
 
-
+    <section>
+    <div class="container">
+    <div class="card-deck">
+    <div class="card">
+    <img class="card-img-top" src="img.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+    </div>
+    <div class="card">
+    <img class="card-img-top" src="img.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+    </div>
+    <div class="card">
+    <img class="card-img-top" src="img.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h4 class="card-title">Card title</h4>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
 
     <script type="text/javascript">
     if(typeof jQuery == "undefined")
@@ -75,6 +193,11 @@
        )
     });
     </script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/toolkit.js"></script>
+    <script src="assets/js/application.js"></script>
     </body>
 </html>
