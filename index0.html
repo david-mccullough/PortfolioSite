@@ -13,7 +13,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="assets/css/toolkit-startup.css" rel="stylesheet">
-
+        <style media="screen">
+          .block
+          {
+            padding: 0px;
+          }
+        </style>
     </head>
 
     <body>
@@ -44,9 +49,9 @@
       <div class="stage" id="stage">
 
       <div class="block block-inverse block-fill-height app-header"
-           style="background-image: url(photoMe.jpg);">
+           style="background-image: url(TODO);">
 
-        <div class="container py-4 fixed-top app-navbar">
+        <div class="container py-4 app-navbar">
         <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
           <button
             class="navbar-toggler navbar-toggler-right hidden-md-up"
@@ -57,48 +62,57 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <a class="navbar-brand mr-auto" href="">
-            <strong style="background: #020200; padding: 12px; border-radius: 4px; color: #fff;">dm</strong>
-          </a>
+          <div class="row mr-auto">
+            <div class="col-sm align-self-center">
+                <div class="media">
+                <img class="mr-4 align-self-center rounded-circle profPic hidden-sm-down" src="photoMeSqr.jpg" alt="photo of david">
+                <div class="media-body my-auto">
+                    <h1>Hi there, I'm<br><b>David McCullough.</b></h1>
+                    <h3 class="intro"><span class="introText">I am a</span>
+                      <b class="introAnimated">
+                        <span1>
+                        programmer.<br>
+                        UX designer.<br>
+                        game designer.<br>
+                        pixel artist.<br>
+                        huge idiot.<br>
+                        programmer.
+                      </span1>
+                      </b>
+                    </h3>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
           <div class="hidden-sm-down text-uppercase">
             <ul class="navbar-nav flex-column">
               <li class="nav-item px-1 ">
-                <a class="nav-link" href="#">StartUp</a>
+                <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item px-1 ">
-                <a class="nav-link" href="minimal/index.html">Minimal</a>
+                <a class="nav-link" href="http://loficacti.com">Games</a>
               </li>
               <li class="nav-item px-1 ">
-                <a class="nav-link" href="bold/index.html">Bold</a>
+                <a class="nav-link" href="http://twitter.com/loficacti">Twitter</a>
               </li>
               <li class="nav-item px-1 ">
-                <a class="nav-link" href="docs/index.html">Docs</a>
+                <a class="nav-link" href="https://drive.google.com/open?id=1IO5CF2_fMX1FXOf_WqtxtOrXK6p_UUYQ">Resume</a>
               </li>
             </ul>
           </div>
         </nav>
       </div>
 
-      <div class="block-xs-middle pb-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-10 col-lg-6">
-              <h1 class="block-titleData frequency">Analytics on demand.</h1>
-              <p class="lead mb-4 text-muted">Stop installing bloated scripts that all track the exact same things. Install one that does everything.</p>
-              <button class="btn btn-primary btn-lg">Try it now</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <section class="banner">
     <div class="container-fluid">
         <div class="row">
           <div class="col-sm align-self-center">
               <div class="media">
               <img class="mr-3 rounded-circle profilePic" src="photoMe.jpg" alt="Generic placeholder image">
-              <div class="media-body">
+              <div class="media-body pl-3">
                   <h1>Hi there, I'm<br><b>David McCullough.</b></h1>
                   <h3 class="intro"><span class="introText">I am a</span>
                   <b class="introAnimated">
