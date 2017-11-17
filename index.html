@@ -1,266 +1,340 @@
+
+
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width = device-width, initial-scale = 1">
-        <title>David McCullough</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <!-- responsive -->
-        <link rel="stylesheet" href="responsive.css">
+    <title>
 
-        <style>
+        David McCullough
 
-        html,body {
-            height:100%;
+    </title>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+      <link href="assets/css/toolkit-startup.css" rel="stylesheet">
+      <link href="assets/css/application-startup.css" rel="stylesheet">
+
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      /* …curses ios, etc… */
+      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+          width: 1px;
+          min-width: 100%;
+          *width: 100%;
         }
-
-        #profilePic {
-            object-fit: cover;
-            object-position: center;
-            width: 256px;
-            height: 256px;
-            top: 32px;
+        #stage {
+          height: 1px;
+          overflow: auto;
+          min-height: 100vh;
+          -webkit-overflow-scrolling: touch;
         }
+      }
 
-        .skillbar {
+      /*div {
+          position: relative;
+          z-index: 0;
+      }
+      div:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        background: inherit;
+    }*/
 
-        }
+    </style>
 
-        .intro {
-            font: normal 24px/30px Arial;
-            color: #999;
-            height: 30px;
-        }
+  </head>
 
-        .introText {
-            height: 30px;
-            float: left;
-            margin-right: 0.3em;
-        }
+<body>
 
-        .introAnimated {
-            float: left;
-            overflow: hidden;
-            position: relative;
-            height: 30px;
-        }
+<div class="stage-shelf stage-shelf-right hidden" id="sidebar">
+  <ul class="nav nav-bordered nav-stacked flex-column">
+    <li class="nav-header">Examples</li>
+    <li class="nav-item">
+      <a class="nav-link active" href="index.html">Startup</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="minimal/index.html">Minimal</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="bold/index.html">Bold</a>
+    </li>
+    <li class="nav-divider"></li>
+    <li class="nav-header">Docs</li>
+    <li class="nav-item">
+      <a class="nav-link" href="docs/index.html">Toolkit</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="http://getbootstrap.com">Bootstrap</a>
+    </li>
+  </ul>
+</div>
 
-        span1 {
-            display: inline-block;
-            color: #08CE78;
-            position: relative;
-            white-space: nowrap;
-            top: 0;
-            left: 0;
-            animation: move 7s;
-            animation-iteration-count: infinite;
-            animation-delay: 1.5s;
-        }
+<div class="stage" id="stage">
 
-        @keyframes move {
-            0%  { top: 0px; }
-            20% { top: -30px; }
-            40% { top: -60px; }
-            60% { top: -90px; }
-            80% { top: -120px; }
-            99.99% { top: -150px; }
-            100% { top: 0px; }
-        }
+<div class="block-inverse app-header">
 
+  <div class="container app-navbar">
+  <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
+    <button
+      class="navbar-toggler navbar-toggler-right hidden-xs-up"
+      type="button"
+      data-target="#stage"
+      data-toggle="stage"
+      data-distance="-250">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-
-        .collapse.in {
-            visibility: visible;
-        }
-
-        .text-small {
-            font-size: 12px;
-        }
-
-        .bg-transparent {
-            background-color: transparent !important;
-        }
-
-        .bg-dark {
-          background-color: #343a40 !important;
-        }
-
-        .text-default {
-         color: #08CE78 !important;
-        }
-
-        a.text-default:focus, a.text-default:hover {
-          color: #08CE78 !important;
-        }
-
-        .progress {
-          display: -ms-flexbox;
-          display: flex;
-          height: 1rem;
-          width: 80%;
-
-          overflow: hidden;
-          font-size: 0.75rem;
-          background-color: #e9ecef;
-          border-radius: 0rem;
-        }
-
-        .progress-bar {
-          color: #fff;
-          background-color: #343a40;
-          transition-duration: 2s;
-        }
-
-        .clear-float {
-            clear:both;
-        }
-
-        .wrap-grid {
-          display: grid;
-          vertical-align: center;
-          align-items: center;
-        }
-
-        .lg-margin-twenty-top{
-            margin-top:10.5%}
-
-        </style>
-
-    </head>
-
-    <body>
-    <section id="home">
-    <div class="container-fluid" style="padding-left:0px; padding-right:0px;">
-    <div class="row">
-    <!-- image -->
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" >
-        <img src="photoMe.jpg" id="profilePic" class="img-responsive img-circle pull-right" alt="photo of me"></img>
-    </div>
-    <!-- end image -->
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="">
-            <h1 class=""><b>Hi there, I'm<br>David McCullough.</b></h1>
-            <h3 class="intro"><span class="introText">I am a</span>
-            <b class="introAnimated">
-              <span1>
-                software engineer<br>
-                game designer<br>
-                UX designer<br>
-                pixel artist<br>
-                huge idiot<br>
-                software engineer
-                </span1>
-            </b>
+    <div class="media mr-auto hidden-sm-down">
+    <img class="mr-4 hidden-xs-down profPic rounded-circle" src="david-sm.jpg" alt="photo">
+    <div class="media-body my-auto" >
+      <h2>Hi there, I'm</h2><h1><b>David McCullough.</b></h1>
+        <h3 class="intro"><span class="introText">I am a</span>
+          <b class="introAnimated">
+            <span1>
+            programmer.<br>
+            UX designer.<br>
+            game developer.<br>
+            pixel artist.<br>
+            stupid kid.<br>
+            programmer.
+          </span1>
+          </b>
         </h3>
-        </div>
-
-        <div class="wrap-grid" style="padding-top:24px;width:96px;">
-            <button type="submit" class="btn btn-default btn-circle" role="button">My Work</button>
-        </div>
-        </div>
+      </div>
     </div>
+    <div class="hidden-sm-down text-uppercase">
+      <ul class="navbar-nav flex-column">
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="http://loficacti.com">Games</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="http://twitter.com/loficacti">Twitter</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="https://drive.google.com/open?id=1IO5CF2_fMX1FXOf_WqtxtOrXK6p_UUYQ">Resume</a>
+        </li>
+      </ul>
     </div>
-    </section>
 
-    <div class="clear-float"></div>
-    <!-- end home -->
 
-    <section class="padding-110px-tb title-style6 bg-white builder-bg xs-padding-top-60px xs-no-padding-bottom no-padding-top border-none" id="title-section6">
-    <div class="container">
-        <div class="row equalize xs-equalize-auto">
-            <!-- section title -->
-            <h1>About me.</h1>
-            <div class="col-md-6 col-sm-6 col-xs-12 xs-margin-twenty-seven-bottom display-table">
-                <div class="display-table-cell-vertical-middle">
-                    <!-- section title -->
-                    <h2 class="text-default text-small">B.A. ARTS AND TECHNOLOGY / UNIVERSITY OF TEXAS AT DALLAS (2018)</h2>
-                    <!-- end section title -->
-                    <div><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p></div>
-                    <div class="width-90 sm-width-100"><p class="no-margin-bottom">Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type.</p></div>
-                </div>
-            </div>
-            <div id="skillbar" class="col-md-6 col-sm-6 col-xs-12  display-table">
-                    <div class="display-table-cell-vertical-middle">
-                        <div class="title-skill md-padding-fifteen sm-padding-nineteen xs-no-padding">
-                            <div class="progress-bar-main progress-bar-style1">
-                                <!-- progress bar item -->
-                                <div class="text-small"><span class="text-dark-gray">Skill One</span> - x years Experience</div>
-                                <div class="progress-bar-animated">
-                                    <div class="progress">
-                                        <div style=aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" role="progressbar" class="progress-bar"></div>
-                                    </div>
-                                </div>
-                                <!-- end progress bar item -->
-                                <!-- progress bar item -->
-                                <div class="text-small"><span class="text-dark-gray">Skill One</span> - x years Experience</div>
-                                <div class="progress-bar-animated">
-                                    <div class="progress">
-                                        <div style=aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar"></div>
-                                    </div>
+    <div class="hidden-md-up text-xs-center" >
 
-                                </div>
-                                <!-- end progress bar item -->
-                                <!-- progress bar item -->
-                                <div class="text-small"><span class="text-dark-gray">Skill One</span> - x years Experience</div>
-                                <div class="progress-bar-animated">
-                                    <div class="progress">
-                                        <div style=aria-valuemax="100" aria-valuemin="0" aria-valuenow="95" role="progressbar" class="progress-bar"></div>
-                                    </div>
-                                </div>
-                                <!-- end progress bar item -->
-                                <!-- progress bar item -->
-                                <div class="text-small"><span class="text-dark-gray">Skill One</span> - x years Experience</div>
-                                <div class="progress-bar-animated">
-                                    <div class="progress">
-                                        <div style=aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" class="progress-bar"></div>
-                                    </div>
+    <span class="my-auto" >
+      <img class="profPic rounded-circle" src="david-sm.jpg" alt="photo">
+      <h1 class=""><b>David McCullough</b><br></h1>
 
-                                </div>
-                                <!-- end progress bar item -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+    </div>
+    <div class="text-xs-center my-auto">
+    <h3 class="intro introAnimated-sm">
+      <b>
+        <span1>
+        programmer<br>
+        UX designer<br>
+        game developer<br>
+        pixel artist<br>
+        stupid kid<br>
+        programmer
+      </span1>
+      </b>
+    </h3>
+  </span>
+</div>
+
+
+    <div class="hidden-md-up text-uppercase">
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="http://loficacti.com">Games</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="http://twitter.com/loficacti">Twitter</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="https://drive.google.com/open?id=1IO5CF2_fMX1FXOf_WqtxtOrXK6p_UUYQ">Resume</a>
+        </li>
+      </ul>
+    </div>
+
+
+
+
+  </nav>
+</div>
+
+</div>
+
+<!--
+<div class="block block-inverse block-secondary">
+  <div class="container">
+    <div class="row app-align-center">
+      <div class="col-sm-10 col-lg-4">
+        <h1 class="block-titleData frequency">Analytics on demand.</h1>
+        <p class="lead mb-4 text-muted">Stop installing bloated scripts that all track the exact same things. Install one that does everything.</p>
+        <button class="btn btn-primary btn-lg">Try it now</button>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+
+<!--turn these in nto social icons?
+<div class="block app-ribbon py-5">
+  <div class="container text-xs-center">
+    <img src="assets/img/startup-4.svg">
+    <img src="assets/img/startup-5.svg">
+    <img src="assets/img/startup-6.svg">
+    <img src="assets/img/startup-7.svg">
+    <img src="assets/img/startup-8.svg">
+  </div>
+</div> -->
+
+<div class="block app-block-marketing-grid pb-4 pt-3"
+style="background-repeat:repeat; background-image: url(assets/img/pixel_weave.png);">
+
+  <div class="text-xs-center my-5">
+        <h3 class="text-uppercase mb-2">Highlighted Work</h6>
+        <h5 class="text-muted"><a href="#">List of all work here.</a></h3>
+  </div>
+
+  <div class="row app-marketing-grid">
+    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
+      <div class="project" style="background-image: url(assets/img/game-scanlines.gif);">
+      	<div class="project-hover">
+        	<h2>TITLE</h2>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p>
+            <a class='default-link' href='#'></a>
         </div>
-    </section>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
+      <div class="project" style="background-image: url(assets/img/game-drtb.gif);">
+      	<div class="project-hover">
+        	<h2>TITLE</h2>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p>
+            <a class='default-link' href='#'></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
+      <div class="project" style="background-image: url(assets/img/game-gstq.gif);">
+      	<div class="project-hover">
+        	<h2>TITLE</h2>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p>
+            <a class='default-link' href='#'></a>
+        </div>
+      </div>
+    </div>
 
 
-    <script type="text/javascript">
+    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
+      <div class="project" style="background-image: url(assets/img/game-sg.gif);">
+      	<div class="project-hover">
+        	<h2>TITLE</h2>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p>
+            <a class='default-link' href='#'></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
+      <div class="project" style="background-image: url(assets/img/game-bones.gif);">
+      	<div class="project-hover">
+        	<h2>TITLE</h2>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p>
+            <a class='default-link' href='#'></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
+      <div class="project" style="background-image: url(assets/img/game-fbomb.gif);">
+      	<div class="project-hover">
+        	<h2>TITLE</h2>
+            <hr />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar ex pulvinar est laoreet ullamcorper.</p>
+            <a class='default-link' href='#'></a>
+        </div>
+      </div>
+    </div>
 
-    if(typeof jQuery == "undefined")
-    {
-        alert("jQuery is not installed!");
-    }
+  </div>
 
-    (function($, win) {
-      $.fn.inViewport = function(cb) {
-        return this.each(function(i, el) {
-          function visPx() {
-            var H = $(this).height(),
-              r = el.getBoundingClientRect(),
-              t = r.top,
-              b = r.bottom;
-            return cb.call(el, Math.max(0, t > 0 ? H - t : (b < H ? b : H)));
-          }
-          visPx();
-          $(win).on("resize scroll", visPx);
-        });
-      };
-    }(jQuery, window));
+</div>
 
-    $('.progress .progress-bar').inViewport(function(px) {
-    if (px) $('.progress .progress-bar').css("width",
-               function() {
-                   return $(this).attr("aria-valuenow") + "%";
-               }
-       )
-   });
-    </script>
+<div class="block block-inverse app-footer">
+ <div class="container">
 
-    </body>
+    <!--<div class="row">
+      <div class="col-md-5 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">About</h6></li>
+          <li class="text-muted">
+             We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at <a href="mailto: themes@getbootstrap.com">themes@getbootstrap.com</a>.
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 offset-md-1 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Product</h6></li>
+          <li class="text-muted">Features</li>
+          <li class="text-muted">Examples</li>
+          <li class="text-muted">Tour</li>
+          <li class="text-muted">Gallery</li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Apis</h6></li>
+          <li class="text-muted">Rich data</li>
+          <li class="text-muted">Simple data</li>
+          <li class="text-muted">Real time</li>
+          <li class="text-muted">Social</li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
+          <li class="text-muted">Terms</li>
+          <li class="text-muted">Legal</li>
+          <li class="text-muted">Privacy</li>
+          <li class="text-muted">License</li>
+        </ul>
+      </div>
+    </div>
+  </div>-->
+</div>
+
+</div>
+
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/tether.min.js"></script>
+    <script src="assets/js/toolkit.js"></script>
+    <script src="assets/js/application.js"></script>
+  </body>
 </html>

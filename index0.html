@@ -18,7 +18,23 @@
           {
             padding: 0px;
           }
-        </style>
+          /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+          /* this chunk of css is not part of the toolkit :) */
+          /* …curses ios, etc… */
+          @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+            body {
+              width: 1px;
+              min-width: 100%;
+              *width: 100%;
+            }
+            #stage {
+              height: 1px;
+              overflow: auto;
+              min-height: 100vh;
+              -webkit-overflow-scrolling: touch;
+            }
+          }
+      </style>
     </head>
 
     <body>
@@ -62,29 +78,27 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <div class="row mr-auto">
-            <div class="col-sm align-self-center">
-                <div class="media">
-                <img class="mr-4 align-self-center rounded-circle profPic hidden-sm-down" src="photoMeSqr.jpg" alt="photo of david">
-                <div class="media-body my-auto">
-                    <h1>Hi there, I'm<br><b>David McCullough.</b></h1>
-                    <h3 class="intro"><span class="introText">I am a</span>
-                      <b class="introAnimated">
-                        <span1>
-                        programmer.<br>
-                        UX designer.<br>
-                        game designer.<br>
-                        pixel artist.<br>
-                        huge idiot.<br>
-                        programmer.
-                      </span1>
-                      </b>
-                    </h3>
+
+
+              <div class="media">
+              <img class="mr-4 profPic align-self-center rounded-circle" src="david-sm.jpg" alt="photo">
+              <div class="media-body my-auto">
+                <h1>Hi there, I'm<br><b>David McCullough.</b></h1>
+                  <h3 class="intro"><span class="introText">I am a</span>
+                    <b class="introAnimated">
+                      <span1>
+                      programmer.<br>
+                      UX designer.<br>
+                      game designer.<br>
+                      pixel artist.<br>
+                      all around sweetheart.<br>
+                      programmer.
+                    </span1>
+                    </b>
+                  </h3>
                 </div>
               </div>
-            </div>
 
-          </div>
 
           <div class="hidden-sm-down text-uppercase">
             <ul class="navbar-nav flex-column">
@@ -104,41 +118,6 @@
           </div>
         </nav>
       </div>
-
-
-    <section class="banner">
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm align-self-center">
-              <div class="media">
-              <img class="mr-3 rounded-circle profilePic" src="photoMe.jpg" alt="Generic placeholder image">
-              <div class="media-body pl-3">
-                  <h1>Hi there, I'm<br><b>David McCullough.</b></h1>
-                  <h3 class="intro"><span class="introText">I am a</span>
-                  <b class="introAnimated">
-                    <span1>
-                      programmer<br>
-                      UX designer<br>
-                      game designer<br>
-                      pixel artist<br>
-                      huge idiot<br>
-                      programmer
-                      </span1>
-                  </b>
-                  </h3>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm">
-            nav here!
-          </div>
-        </div>
-
-
-    </div>
-
-    </section>
 
     <section>
     <div class="container">

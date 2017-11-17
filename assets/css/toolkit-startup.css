@@ -8288,7 +8288,6 @@ textarea {
   color: inherit;
   background-color: #fff;
   background-position: center;
-  background-size: cover;
   background-repeat: no-repeat; }
 
 .block-overflow-hidden {
@@ -8436,7 +8435,7 @@ textarea {
 .block-fill-height {
   display: table;
   width: 100%;
-  height: 110vh; }
+  height: 100vh; }
 
 .block-label {
   margin-bottom: 20px;
@@ -8506,7 +8505,7 @@ h1.block-title {
 
 @media (min-width: 576px) {
   .block {
-    padding: 1rem 1rem; }
+    padding: 100px 1rem; }
     .block:not(.block-secondary) .lead {
       font-size: 21px; } }
 
@@ -8925,7 +8924,7 @@ img.zoom-img {
         font-size: 1.5rem; } }
 
 .stage {
-  background-color: #fff;
+  background: #e3e3e3;
   position: relative; }
 
 .stage-shelf {

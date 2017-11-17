@@ -50,7 +50,6 @@ h1 {
 }
 .profPic {
   max-width: 200px;
-  max-height: 100%;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -78,11 +77,16 @@ h1 {
     position: relative;
     height: 30px;
 }
+.introAnimated-sm {
+    overflow: hidden;
+
+    height: 30px;
+}
 
 span1 {
-    display: inline-block;
+    display: inline;
+        position: relative;
     color: #08CE78;
-    position: relative;
     white-space: nowrap;
     top: 0;
     left: 0;
