@@ -145,3 +145,9 @@
 .btn-yahoo:active,.btn-yahoo.active,.open>.dropdown-toggle.btn-yahoo{background-image:none}
 .btn-yahoo.disabled:hover,.btn-yahoo[disabled]:hover,fieldset[disabled] .btn-yahoo:hover,.btn-yahoo.disabled:focus,.btn-yahoo[disabled]:focus,fieldset[disabled] .btn-yahoo:focus,.btn-yahoo.disabled.focus,.btn-yahoo[disabled].focus,fieldset[disabled] .btn-yahoo.focus{background-color:#720e9e;border-color:rgba(0,0,0,0.2)}
 .btn-yahoo .badge{color:#720e9e;background-color:#fff}
+.btn-itch{color:#fff;background-color:#F24D52;border-color:rgba(0,0,0,0.2)}.btn-itch:focus,.btn-itch.focus{color:#fff;background-color:#E03D49;border-color:rgba(0,0,0,0.2)}
+.btn-itch:hover{color:#fff;background-color:#E03D49;border-color:rgba(0,0,0,0.2)}
+.btn-itch:active,.btn-itch.active,.open>.dropdown-toggle.btn-itch{color:#fff;background-color:#E03D49;border-color:rgba(0,0,0,0.2)}.btn-itch:active:hover,.btn-itch.active:hover,.open>.dropdown-toggle.btn-itch:hover,.btn-itch:active:focus,.btn-itch.active:focus,.open>.dropdown-toggle.btn-itch:focus,.btn-itch:active.focus,.btn-itch.active.focus,.open>.dropdown-toggle.btn-itch.focus{color:#fff;background-color:#39074e;border-color:rgba(0,0,0,0.2)}
+.btn-itch:active,.btn-itch.active,.open>.dropdown-toggle.btn-itch{background-image:none}
+.btn-itch.disabled:hover,.btn-itch[disabled]:hover,fieldset[disabled] .btn-itch:hover,.btn-itch.disabled:focus,.btn-itch[disabled]:focus,fieldset[disabled] .btn-itch:focus,.btn-itch.disabled.focus,.btn-itch[disabled].focus,fieldset[disabled] .btn-itch.focus{background-color:#F24D52;border-color:rgba(0,0,0,0.2)}
+.btn-itch .badge{color:#F24D52;background-color:#fff}

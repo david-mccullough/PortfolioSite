@@ -8,7 +8,7 @@
 
 /* header block */
 .app-header {
-  background-color: #262F36;
+  background-color: #1A1A1A;
   padding: 2em 0;
 }
 
@@ -126,7 +126,7 @@ color: #08CE78;
 
 /* footer block */
 .app-footer {
-  background-color: #262F36;
+  background-color: #1A1A1A;
 }
 .app-footer a {
   color: #fff;
@@ -159,6 +159,8 @@ color: #08CE78;
 	background-position: center;
 	padding: 0 !important;
 	float:left;
+  outline-style: solid;
+  outline-width: thin;
 }
 
 .project-hover {
