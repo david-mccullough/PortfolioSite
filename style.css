@@ -4,6 +4,34 @@
     --color-white: #ffffff;
 }
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 96px;
+  line-height: 96px; /* Vertically center the text there */
+  background-color: #1A1A1A;
+}
+
+#header {
+}
+#body {
+margin-bottom: 96px;
+
+}
+#footer {
+
+}
+
 .wrapper {
     height: 192px;
     background-color: white;
