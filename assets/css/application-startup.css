@@ -10,6 +10,7 @@
 .app-header {
   background-color: #1A1A1A;
   padding: 2em 0;
+
 }
 
 .app-graph {
@@ -74,10 +75,18 @@
 }
 
 a {
-color: #08CE78;
+    color: #08CE78;
 }
 a:hover{
-color: #08CE78;
+    color: #08CE78;
+}
+a:active
+{
+    color: #06a862
+}
+a:focus
+{
+    color: #06a862
 }
 
 
@@ -93,6 +102,21 @@ color: #08CE78;
 }
 .app-ribbon img {
   margin: 0 10px 30px;
+}
+
+.app-about
+{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.app-header a {
+    color: white;
+    text-decoration: none;
+}
+
+.app-header a:hover {
+    text-decoration: none;
 }
 
 

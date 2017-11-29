@@ -55,10 +55,6 @@ h1 {
   background-size: cover;
 }
 
-.blocktext {
-}
-
-
 .intro {
     font: normal 24px/30px Arial;
     color: #999;
@@ -142,4 +138,20 @@ span1 {
     padding: 50px;
     font-size: 15px;
   }
+}
+
+.mytextdiv{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+.mytexttitle{
+  flex-grow:0;
+  padding-right: 10px;
+}
+
+.divider{
+  flex-grow:1;
+  height: 1px;
+  background-color: #9f9f9f;
 }

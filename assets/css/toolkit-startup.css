@@ -1955,23 +1955,23 @@ fieldset[disabled] a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #2595FF;
-  border-color: #2595FF; }
+  background-color: #08CE78;
+  border-color: #08CE78; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #007cf1;
-    border-color: #0077e7; }
+    background-color: #06a862;
+    border-color: #06a862; }
   .btn-primary:focus, .btn-primary.focus {
-    box-shadow: 0 0 0 2px rgba(37, 149, 255, 0.5); }
+    box-shadow: 0 0 0 2px rgba(8, 206, 120, 0.5); }
   .btn-primary.disabled, .btn-primary:disabled {
-    background-color: #2595FF;
-    border-color: #2595FF; }
+    background-color: #08CE78;
+    border-color: #08CE78; }
   .btn-primary:active, .btn-primary.active,
   .show > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #007cf1;
+    background-color: #06a862;
     background-image: none;
-    border-color: #0077e7; }
+    border-color: #06a862; }
 
 .btn-secondary {
   color: #292b2c;

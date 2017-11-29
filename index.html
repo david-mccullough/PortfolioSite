@@ -4,6 +4,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110415210-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110415210-1');
+    </script>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -63,36 +73,12 @@
 
 <body>
 
-<div class="stage-shelf stage-shelf-right hidden" id="sidebar">
-  <ul class="nav nav-bordered nav-stacked flex-column">
-    <li class="nav-header">Examples</li>
-    <li class="nav-item">
-      <a class="nav-link active" href="index.html">Startup</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="minimal/index.html">Minimal</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="bold/index.html">Bold</a>
-    </li>
-    <li class="nav-divider"></li>
-    <li class="nav-header">Docs</li>
-    <li class="nav-item">
-      <a class="nav-link" href="docs/index.html">Toolkit</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="http://getbootstrap.com">Bootstrap</a>
-    </li>
-  </ul>
-</div>
-
 <div class="stage" id="stage">
-
 
 <div class="block-inverse app-header">
 
   <div class="container app-navbar">
-  <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
+  <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm" style="max-width: 960px; margin:0 auto;">
     <button
       class="navbar-toggler navbar-toggler-right hidden-xs-up"
       type="button"
@@ -102,6 +88,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <a href="index.html">
     <div class="media mr-auto hidden-sm-down">
     <img class="mr-4 hidden-xs-down profPic rounded-circle" src="david-sm.jpg" alt="photo">
     <div class="media-body my-auto" >
@@ -120,16 +107,18 @@
         </h3>
       </div>
     </div>
+    </a>
+
     <div class="hidden-sm-down text-uppercase">
       <ul class="navbar-nav flex-column">
         <li class="nav-item px-1 ">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item px-1 ">
           <a class="nav-link" href="http://loficacti.com">Games</a>
         </li>
         <li class="nav-item px-1 ">
-          <a class="nav-link" href="http://twitter.com/loficacti">Twitter</a>
+          <a class="nav-link" href="blog.html">Blog</a>
         </li>
         <li class="nav-item px-1 ">
           <a class="nav-link" href="https://drive.google.com/open?id=1IO5CF2_fMX1FXOf_WqtxtOrXK6p_UUYQ">Resume</a>
@@ -137,13 +126,11 @@
       </ul>
     </div>
 
-
+    <a href="index.html">
     <div class="hidden-md-up text-xs-center" >
-
     <span class="my-auto" >
       <img class="profPic rounded-circle" src="david-sm.jpg" alt="photo">
       <h1 class=""><b>David McCullough</b><br></h1>
-
 
     </div>
     <div class="hidden-md-up text-xs-center my-auto">
@@ -161,18 +148,19 @@
     </h3>
   </span>
 </div>
+</a>
 
 
     <div class="hidden-md-up text-uppercase">
       <ul class="navbar-nav flex-row">
         <li class="nav-item px-1 ">
-          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item px-1 ">
           <a class="nav-link" href="http://loficacti.com">Games</a>
         </li>
         <li class="nav-item px-1 ">
-          <a class="nav-link" href="http://twitter.com/loficacti">Twitter</a>
+          <a class="nav-link" href="blog.html">Blog</a>
         </li>
         <li class="nav-item px-1 ">
           <a class="nav-link" href="https://drive.google.com/open?id=1IO5CF2_fMX1FXOf_WqtxtOrXK6p_UUYQ">Resume</a>
@@ -180,38 +168,12 @@
       </ul>
     </div>
 
-
-
-
   </nav>
 </div>
 
 </div>
 
-<!--
-<div class="block block-inverse block-secondary">
-  <div class="container">
-    <div class="row app-align-center">
-      <div class="col-sm-10 col-lg-4">
-        <h1 class="block-titleData frequency">Analytics on demand.</h1>
-        <p class="lead mb-4 text-muted">Stop installing bloated scripts that all track the exact same things. Install one that does everything.</p>
-        <button class="btn btn-primary btn-lg">Try it now</button>
-      </div>
-    </div>
-  </div>
-</div>
--->
 
-<!--turn these in nto social icons?
-<div class="block app-ribbon py-5">
-  <div class="container text-xs-center">
-    <img src="assets/img/startup-4.svg">
-    <img src="assets/img/startup-5.svg">
-    <img src="assets/img/startup-6.svg">
-    <img src="assets/img/startup-7.svg">
-    <img src="assets/img/startup-8.svg">
-  </div>
-</div> -->
 
 <div class="block app-block-marketing-grid pb-4 pt-3"
 style="background-repeat:repeat; background-image: url(assets/img/pixel_weave.png);">
@@ -294,27 +256,27 @@ style="background-repeat:repeat; background-image: url(assets/img/pixel_weave.pn
 <div class="block block-inverse app-footer">
   <div class="container  text-center">
 
-      <a class="btn btn-lg btn-social-icon btn-google mx-3"
+      <a class="btn btn-lg btn-social-icon btn-google mx-2"
       href="mailto:davidmcculloughw@gmail.com" target="_blank">
         <span class="fa fa-envelope" style="vertical-align: middle; "></span>
       </a>
 
-      <a class="btn btn-lg btn-social-icon btn-twitter mx-3"
+      <a class="btn btn-lg btn-social-icon btn-twitter mx-2"
       href="http://twitter.com/loficacti" target="_blank">
         <span class="fa fa-twitter"></span>
       </a>
 
-      <a class="btn btn-lg btn-social-icon btn-itch mx-3"
+      <a class="btn btn-lg btn-social-icon btn-itch mx-2"
       href="https://loficacti.itch.io/" target="_blank">
         <img src="assets/img/itchio-textless.svg" alt="">
       </a>
 
-      <a class="btn btn-lg btn-social-icon btn-linkedin mx-3"
+      <a class="btn btn-lg btn-social-icon btn-linkedin mx-2"
       href="https://www.linkedin.com/in/david-mccullough-12a2109a/" target="_blank">
         <span class="fa fa-linkedin"></span>
       </a>
 
-      <a class="btn btn-lg btn-social-icon btn-github mx-3"
+      <a class="btn btn-lg btn-social-icon btn-github mx-2"
       href="https://github.com/david-mccullough" target="_blank">
         <span class="fa fa-github"></span>
       </a>
