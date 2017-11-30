@@ -277,7 +277,7 @@ html {
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
-	background-color: rgba(8, 206, 120, 0.65);
+	background-color: rgba(8, 206, 120, 0.75);
 	padding: 1em 10% !important;
 }
 
@@ -328,38 +328,45 @@ html {
     color: #fff; }
 
 .project-scanlines {
-	background-image: url(../img/cartographer.png);
+	background-image: url(../img/game-scanlines.gif);
 }
 .project-scanlines:hover {
-  background-image: url(../img/game-scanlines.gif);
+  background-image: url(../img/game-scanlines-gp.gif);
 }
 
 .project-drtb {
-	background-image: url(../img/cartographer.png);
+	background-image: url(../img/game-drtb.jpg);
 }
-.project-dtrb:hover {
+.project-drtb:hover {
   background-image: url(../img/game-drtb.gif);
 }
 
 .project-mwm {
-	background-image: url(../img/cartographer.png);
+	background-image: url(../img/game-mwm.jpg);
 }
 .project-mwm:hover {
-  background-image: url(../img/game-scanlines.gif);
+  background-image: url(../img/game-mwm.gif);
 }
 
 .project-gstq {
-	background-image: url(../img/cartographer.png);
+	background-image: url(../img/game-gstq.jpg);
 }
 .project-gstq:hover {
   background-image: url(../img/game-gstq.gif);
 }
 
 .project-bones {
-	background-image: url(../img/cartographer.png);
+	background-image: url(../img/game-bones.jpg);
 }
 .project-bones:hover {
   background-image: url(../img/game-bones.gif);
+}
+
+.project-dote-ux {
+	background-image: url(../img/project-dote-ux.jpg);
+}
+.project-dote-ux:hover {
+  background-image: url(../img/project-dote-ux.jpg);
 }
 
 .default-link{
