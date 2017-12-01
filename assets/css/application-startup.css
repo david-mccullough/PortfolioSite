@@ -121,9 +121,10 @@ a:focus
 
 /* marketing grid block */
 .app-marketing-grid {
-  padding-left: 4em;
-  padding-right: 4em;
+  
   max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .app-block-marketing-grid .container {
@@ -254,22 +255,27 @@ html {
   .project-hover {
     height: 240px; }
 
+
+
 }
 
 .project {
-	width: 300px;
+	max-width: 300px;
+  width: 100%;
 	height: 225px;
 	background-size: cover;
 	background-position: center;
 	padding: 0 !important;
-	float:left;
+
   outline-style: solid;
   outline-width: thin;
   line-height: 18px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .project-hover {
-  width: 300px;
+  max-width: 300px;
 	height: 225px;
 	color: #fff;
 	opacity: 0;
@@ -373,9 +379,10 @@ html {
   /* all rules required to make the whole div clickable */
   position:absolute;
   width:100%;
+  max-width: 300px;
   height:100%;
   top:0;
-  left: 0;
+  left:0;
   z-index: 1;
   /* this is a fix for IE7-9 */
   background-color:#ffffff;
