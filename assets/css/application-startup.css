@@ -109,6 +109,13 @@ a:focus
     margin: 0 auto;
 }
 
+.app-work
+{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0px;
+}
+
 .app-header a {
     color: white;
     text-decoration: none;
@@ -121,7 +128,7 @@ a:focus
 
 /* marketing grid block */
 .app-marketing-grid {
-  
+
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
