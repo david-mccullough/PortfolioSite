@@ -54,6 +54,14 @@
           });
         });
 
+        function toggleVideo(state) {
+            // if state == 'hide', hide. Else: show video
+            var div = document.getElementById("video");
+            var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+            func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+            iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
+        }
+
       </script>
 
 
@@ -75,67 +83,70 @@
         }
       }
 
-    #projectFrame {
-      width: inherit;
-      height: inherit;
-      overflow-x:hidden;
-      overflow-y: visible;
-      min-height:750px
+      #projectFrame {
+        width: inherit;
+        height: inherit;
+        overflow-x:hidden;
+        overflow-y: visible;
+        min-height:750px
+      }
+
+     .itch-widget iframe {
+       width:80%;
+     }
+
+     .wl-content {
+       text-align: center;
+       padding-bottom: 5px;
+     }
+
+     .wl-content .col   {
+       text-align: left;
+     }
+
+     .wl-content img   {
+       max-width: 60%;
+     }
+
+     #workList .list-group-item {
+       padding: 5px 10px;
+     }
+
+     #projectContent {
+       background-color: #F7F7F7;
+
+     }
+
+     .wl-body {
+       padding: 5px 15px;
+     }
+
+     .wl-header {
+       background-color: #42464A;
+
+     }
+
+     .wl-header h4 {
+       font-size: 2rem;
+       padding: 5px 15px;
+       color: #FFFFFF;
+     }
+
+     .list-group-item.active {
+      z-index: 2;
+      color: #fff;
+      background-color: #08CE78;
+      border-color: #08CE78;
+      }
+
+    .list-group-item-heading {
+      background-color: #494E52;
+      color: #fff;
     }
 
-    .wl-active {
-      background-color: black;
-    }
+  </style>
 
-    h4 {
-      font-size: 2rem;
-    }
-
-   .wl {
-
-   }
-
-   .itch-widget iframe {
-     width:80%;
-   }
-
-   .wl-content {
-     text-align: center;
-     padding-bottom: 5px;
-   }
-
-   .wl-content .col   {
-     text-align: left;
-   }
-
-   .wl-content img   {
-     max-width: 400px
-   }
-
-   #workList .list-group-item {
-     padding: 5px 10px;
-   }
-
-   #projectContent {
-     background-color: #F7F7F7;
-     padding: 5px 15px;
-   }
-
-   .list-group-item.active {
-    z-index: 2;
-    color: #fff;
-    background-color: #08CE78;
-    border-color: #08CE78;
-    }
-
-  .list-group-item-heading {
-    background-color: #494E52;
-    color: #fff;
-  }
-
-    </style>
-
-  </head>
+</head>
 
 <body>
 <section id="header">
@@ -246,11 +257,11 @@
 
 <div class="block app-work">
   <div class="container">
-
+    <h3 class="text-uppercase mb-4 text-center">Work</h6>
     <!-- Project Panel -->
     <section>
       <!-- modal -->
-      <h3 class="hidden-sm-up"style="text-align: center;"><a class="btn btn-secondary" style="width:100%;" data-toggle="modal" data-target="#exampleModalLong">Select Project</a></h3>
+      <h3 class="hidden-sm-up"style="text-align: center;"><a class="btn btn-primary" style="width:100%; color: white;" data-toggle="modal" data-target="#exampleModalLong">Select New Project</a></h3>
       <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -265,31 +276,31 @@
               <div class="list-group" id="workList">
 
                 <h6 class="list-group-item list-group-item-heading" style="border-radius: 0;">Games</h6>
-                  <a class="list-group-item list-group-item-action active" data-dismiss="modal" data-toggle="list" href="#wl-scanlines" role="tab">Scanlines</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-sensei" role="tab">Sensei</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-sgspr" role="tab">Super Galactic Star Planet Racers</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-drtb" role="tab">Don't Rock The Boat</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-bones" role="tab">Bones</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-bondori" role="tab">Bon Odori</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-gstq" role="tab">God Save The Queen</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-mwm" role="tab">Maybe We're Magic</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-ascend" role="tab">Ascend</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-sunneversets" role="tab">The Sun Never Sets</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-himandher" role="tab">Him and Her</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-fbomb" role="tab">Friendly Bomb</a>
+                  <a class="list-group-item list-group-item-action active" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-scanlines" role="tab">Scanlines</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sensei" role="tab">Sensei</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sgspr" role="tab">Super Galactic Star Planet Racers</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-drtb" role="tab">Don't Rock The Boat</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bones" role="tab">Bones</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bondori" role="tab">Bon Odori</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-gstq" role="tab">God Save The Queen</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-mwm" role="tab">Maybe We're Magic</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-ascend" role="tab">Ascend</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sunneversets" role="tab">The Sun Never Sets</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-himandher" role="tab">Him and Her</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-fbomb" role="tab">Friendly Bomb</a>
 
                 <h6 class="list-group-item list-group-item-heading">Freelance and Contract</h6>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-900lbs-vr" role="tab">Underwater VR Motion Graphics</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-bloomgroup" role="tab">Bloom Group LLC</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-900lbs-vr" role="tab">Underwater VR Motion Graphics</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bloomgroup" role="tab">Bloom Group LLC</a>
 
                 <h6 class="list-group-item list-group-item-heading">University Projects</h6>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-kura" role="tab">Kura</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-godofsand" role="tab">God of Sand</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-photo" role="tab">Photography Course Project</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-indieblog" role="tab">Indie Game Blog</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" href="#wl-spook" role="tab">Spook! Board Game</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-kura" role="tab">Kura</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-godofsand" role="tab">God of Sand</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-photo" role="tab">Photography Course Project</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-indieblog" role="tab">Indie Game Blog</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-spook" role="tab">Spook! Board Game</a>
 
               </div>
 
@@ -304,31 +315,31 @@
           <div class="list-group" id="workList">
 
             <h6 class="list-group-item list-group-item-heading">Games</h6>
-              <a class="list-group-item list-group-item-action active" data-toggle="list" href="#wl-scanlines" role="tab">Scanlines</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-sensei" role="tab">Sensei</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-sgspr" role="tab">Super Galactic Star Planet Racers</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-drtb" role="tab">Don't Rock The Boat</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-bones" role="tab">Bones</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-bondori" role="tab">Bon Odori</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-gstq" role="tab">God Save The Queen</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-mwm" role="tab">Maybe We're Magic</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-ascend" role="tab">Ascend</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-sunneversets" role="tab">The Sun Never Sets</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-himandher" role="tab">Him and Her</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-fbomb" role="tab">Friendly Bomb</a>
+              <a class="list-group-item list-group-item-action active" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-scanlines" role="tab">Scanlines</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sensei" role="tab">Sensei</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sgspr" role="tab">Super Galactic Star Planet Racers</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-drtb" role="tab">Don't Rock The Boat</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bones" role="tab">Bones</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bondori" role="tab">Bon Odori</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-gstq" role="tab">God Save The Queen</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-mwm" role="tab">Maybe We're Magic</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-ascend" role="tab">Ascend</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sunneversets" role="tab">The Sun Never Sets</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-himandher" role="tab">Him and Her</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-fbomb" role="tab">Friendly Bomb</a>
 
             <h6 class="list-group-item list-group-item-heading">Freelance and Contract</h6>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-900lbs-vr" role="tab">Underwater VR Motion Graphics</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-bloomgroup" role="tab">Bloom Group LLC</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-900lbs-vr" role="tab">Underwater VR Motion Graphics</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bloomgroup" role="tab">Bloom Group LLC</a>
 
             <h6 class="list-group-item list-group-item-heading">University Projects</h6>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-kura" role="tab">Kura</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-godofsand" role="tab">God of Sand</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-photo" role="tab">Photography Course Project</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-indieblog" role="tab">Indie Game Blog</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" href="#wl-spook" role="tab">Spook! Board Game</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-kura" role="tab">Kura</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-godofsand" role="tab">God of Sand</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-photo" role="tab">Photography Course Project</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-indieblog" role="tab">Indie Game Blog</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-spook" role="tab">Spook! Board Game</a>
 
           </div>
         </div>
@@ -336,75 +347,129 @@
 
           <div class="tab-content" id="projectContent">
             <div class="tab-pane fade active show" id="wl-scanlines" role="tabpanel">
-              <h4><span class="fa fa-gamepad"></span> Scanlines</h4>
-              <p>
-                A fourth-wall breaking narrative experience where an A.I. instructor teaches the player about humanity through a series of absurd training excercises.
-                Created in 3 weeks fo <a target="_blank" href="https://itch.io/jam/a-game-by-its-cover-2017">A Game By It's Cover Jam 2017.</a>
-              </p>
-              <p>Responsible for entire project.</p>
-              <p class="wl-content"><img src="assets/img/game-scanlines-gp.gif" alt="" class="img-thumbnail"></p>
-              <p class="wl-content"><img src="assets/img/game-scanlines-gp2.gif" alt="" class="img-thumbnail"></p>
-              <p class="wl-content caption"><img src="assets/img/scanlines cart.jpg" alt="" class="img-thumbnail"><br>Inspired by Tyler Dori's fictional famicase cartdridge.</p>
-              <p class="itch-widget wl-content">
-              <iframe frameborder="0" src="https://itch.io/embed/179207?bg_color=000000&amp;fg_color=d8121a&amp;link_color=ac1117&amp;border_color=000000" width="552" height="167"></iframe>
-              </p>
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Scanlines (2017)</h4></div>
+              <div class="wl-body">
+                <p>
+                  A fourth-wall breaking narrative experience where an A.I. instructor teaches the player about humanity through a series of absurd training excercises.
+                  Created in 3 weeks fo <a target="_blank" href="https://itch.io/jam/a-game-by-its-cover-2017">A Game By It's Cover Jam 2017.</a>
+                </p>
+
+                <p class="wl-content"><img src="assets/img/game-scanlines-gp.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/game-scanlines-gp2.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content caption"><img src="assets/img/scanlines cart.jpg" alt="" class="img-thumbnail"><br>Inspired by Tyler Dori's fictional famicase cartdridge.</p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/179207?bg_color=000000&amp;fg_color=d8121a&amp;link_color=ac1117&amp;border_color=000000" width="552" height="167"></iframe>
+                </p>
+              </div>
             </div>
+
             <div class="tab-pane fade" id="wl-sensei" role="tabpanel">
-              <h4><span class="fa fa-gamepad"></span> Sensei (2017)</h4>
-              <p>
-                The student becomes the master in this short action game prompted by the theme "Role Reversal".
-                Created in 48 hours for <a target="_blank" href="http://www.chillennium.com">Chillennium 2017.</a>
-              </p>
-              <p>Responsibilties included game design, programming, and art direction.</p>
-              <p class="wl-content"><img src="assets/img/sensei01.gif" alt="" class="img-thumbnail"></p>
-              <p class="itch-widget wl-content">
-              <iframe frameborder="0" src="https://itch.io/embed/184626?bg_color=000000&amp;fg_color=b5b5b5&amp;link_color=ffffff&amp;border_color=4f4f4f" width="552" height="167"></iframe>
-              </p>
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Sensei (2017)</h4></div>
+              <div class="wl-body">
+                <p>
+                  The student becomes the master in this short action game prompted by the theme "Role Reversal".
+                  Created in 48 hours for <a target="_blank" href="http://www.chillennium.com">Chillennium 2017.</a>
+                </p>
+                <p>Responsibilties included game design, programming, and art direction.</p>
+                <p class="wl-content"><img src="assets/img/sensei01.gif" alt="" class="img-thumbnail"></p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/184626?bg_color=000000&amp;fg_color=b5b5b5&amp;link_color=ffffff&amp;border_color=4f4f4f" width="552" height="167"></iframe>
+                </p>
+              </div>
             </div>
+
             <div class="tab-pane fade" id="wl-drtb" role="tabpanel">
-              <h4><span class="fa fa-gamepad"></span> Don't Rock The Boat (2016)</h4>
-              <p>
-                A game about a cruise ship waiter on rocky waters. The player must keep the vacationeers refreshed without spilling their water!
-                <strong>Awarded 1st Place at <a target="_blank" href="http://www.chillennium.com">Chillennium 2016</a></strong>, the largest national student game jam at the time.
-              </p>
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Don't Rock The Boat (2016)</h4></div>
+              <div class="wl-body">
+                <p>
+                  A game about a cruise ship waiter on rocky waters. The player must keep the vacationeers refreshed without spilling their water!
+                  <strong>Awarded 1st Place at <a target="_blank" href="http://www.chillennium.com">Chillennium 2016</a>, the largest national student game jam at the time.</strong>
+                </p>
 
-              <p>Responsibilties included game design, programming, and art/animation.</p>
+                <p>Responsibilties included game design, programming, and art/animation.</p>
 
-              <p class="wl-content"><iframe width="520" height="315" src="https://www.youtube.com/embed/wDgsioUo-sY?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></p>
-              <!--<p class="wl-content"><img src="assets/img/game-drtb-ss.png" alt="" class="img-thumbnail"></p>-->
-              <p class="itch-widget wl-content">
-              <iframe frameborder="0" src="https://itch.io/embed/87440" width="552" height="167"></iframe>
-              </p>
+                <div class="wl-content" id="video"><iframe width="520" height="315" src="https://www.youtube.com/embed/wDgsioUo-sY?enablejsapi=1&modestbranding=1&rel=0&showinfo=0&color=white" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+                <p class="wl-content"><img src="assets/img/chillennium.jpg" alt="" class="img-thumbnail"></p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/87440" width="552" height="167"></iframe>
+                </p>
+              </div>
             </div>
+
             <div class="tab-pane fade" id="wl-sgspr" role="tabpanel">
-              <h4><span class="fa fa-gamepad"></span> Super Galactic Star Planet Racers (2017)</h4>
-              <p>A racing game wherein you must manipulate your planet's orbit around a dancing sun via a grappling tether in order to beat your opponent in collecting points. Created in 48 hours for the Fall 2016 UTD SGDA Game Jam given the theme "Loop"</p>
-              <p>Responsibilties included programming, art, and game design.</p>
-              <p class="wl-content"><img src="assets/img/game-sg.gif" alt="" class="img-thumbnail"></p>
-              <p class="wl-content"><img src="assets/img/game-sg2.gif" alt="" class="img-thumbnail"></p>
-              <p class="itch-widget wl-content">
-              <iframe frameborder="0" src="https://itch.io/embed/130290?bg_color=313654&amp;fg_color=fcfcfc&amp;link_color=f94d78&amp;border_color=8b74af" width="552" height="167"></iframe>
-              </p>
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Super Galactic Star Planet Racers (2017)</h4></div>
+              <div class="wl-body">
+                <p>A racing game wherein you must manipulate your planet's orbit around a dancing sun via a grappling tether in order to beat your opponent in collecting points. Created in 48 hours for the Fall 2016 UTD SGDA Game Jam given the theme "Loop"</p>
+                <p>Responsibilties included programming, art, and game design.</p>
+                <p class="wl-content"><img src="assets/img/game-sg.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/game-sg2.gif" alt="" class="img-thumbnail"></p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/130290?bg_color=313654&amp;fg_color=fcfcfc&amp;link_color=f94d78&amp;border_color=313654" width="552" height="167"></iframe>
+                </p>
+              </div>
             </div>
+
             <div class="tab-pane fade" id="wl-fbomb" role="tabpanel">Friendly Bomb (2015)</div>
 
-            <div class="tab-pane fade" id="wl-bones" role="tabpanel">Bones (2016)</div>
-            <div class="tab-pane fade" id="wl-bondori" role="tabpanel">
-              <h4><span class="fa fa-gamepad"></span> Bon Odori (2016)</h4>
-              <p>
-                A game about a cruise ship waiter on rocky waters. The player must keep the vacationeers refreshed without spilling their water!
-                <strong>Awarded 1st Place at <a target="_blank" href="http://www.chillennium.com">Chillennium 2016</a></strong>, the largest national student game jam at the time.
-              </p>
-
-              <p>Responsibile for entire project.</p>
-              <p class="wl-content"><img src="assets/img/game-bon3.gif" alt="" class="img-thumbnail"></p>
-              <p class="wl-content"><img src="assets/img/game-bon2.gif" alt="" class="img-thumbnail"></p>
-              <p class="itch-widget wl-content">
-              <iframe frameborder="0" src="https://itch.io/embed/107649?bg_color=3F352A&amp;fg_color=ded7ce&amp;link_color=DBB588&amp;border_color=5a534a" width="552" height="167"></iframe>
-              </p>
+            <div class="tab-pane fade" id="wl-bones" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Bones (2016)</h4></div>
+              <div class="wl-body">
+                <p>
+                  Roguelite action where the player can choose to end a run early to permanently save loot or risk it all for bigger rewards.
+                  Features procedural dungeons and a loveable skeleton shopkeeper.
+                </p>
+                <p class="wl-content"><img src="assets/img/game-bones.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/game-bones2.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/game-bones3.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/game-bones4.gif" alt="" class="img-thumbnail"></p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/59661?bg_color=d7d5d0&amp;fg_color=3a3632&amp;link_color=df8f15&amp;border_color=464444" width="552" height="167"></iframe>
+                </p>
+              </div>
             </div>
-            <div class="tab-pane fade" id="wl-gstq" role="tabpanel">God Save The Queen (2016)</div>
-            <div class="tab-pane fade" id="wl-mwm" role="tabpanel">Maybe We're Magic (2016)</div>
+
+            <div class="tab-pane fade" id="wl-bondori" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Bon Odori (2016)</h4></div>
+              <div class="wl-body">
+                <p>
+                   A relaxing, non-violent platformer in which a forest spirit catches fireflies in order to light the lanterns hanging from a giant tree.
+                  <strong>Was nominated by ATEC faculty and showcased along other exemplary work in games during 2016 at UTD.</strong>
+                </p>
+
+                <p class="wl-content"><img src="assets/img/game-bon3.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/game-bon2.gif" alt="" class="img-thumbnail"></p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/107649?bg_color=3F352A&amp;fg_color=ded7ce&amp;link_color=DBB588&amp;border_color=3F352A" width="552" height="167"></iframe>
+                </p>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="wl-gstq" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> God Save The Queen (2016)</h4></div>
+              <div class="wl-body">
+                <p>
+                   Asymmetric multiplayer game that pits a sniper against an incognito spy. One player must use their wit to blend in and accomplish their task while their opponent attempts to identify and terminate them before it's too late.
+                  <strong>Has been relatively well-received on itch. Modest success with 9000+ downloads.</strong>
+                </p>
+                <p class="wl-content"><img src="assets/img/game-gstq2.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/game-gstq3.gif" alt="" class="img-thumbnail"></p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/91866?bg_color=ffffff&amp;fg_color=000000&amp;link_color=000000&amp;border_color=909090" width="552" height="167"></iframe>
+                </p>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="wl-mwm" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Maybe We're Magic (2016)</h4></div>
+              <div class="wl-body">
+                <p>No one will be stopping this magical rock tour. Turn-based funkadelic action about escaping a hot pursuit in space.</p>
+                <p>Featured on <a target="_blank" href="http://www.pcgamer.com/free-games-of-the-week/">PC Gamer</a> as one of the best free games of the week in October 2016.</p>
+
+                <p class="wl-content"><img src="assets/img/game-mwm3.gif" alt="" class="img-thumbnail"></p>
+                <p class="wl-content" ><img style="max-width: 80%;" src="assets/img/PCGamer.png" alt="" class="img-thumbnail"></p>
+                <p class="itch-widget wl-content">
+                <iframe frameborder="0" src="https://itch.io/embed/86907?bg_color=121212&amp;fg_color=ffffff&amp;link_color=11bdca&amp;border_color=2f2d43" width="552" height="167"></iframe>
+                </p>
+              </div>
+            </div>
             <div class="tab-pane fade" id="wl-ascend" role="tabpanel">Ascend (2016)</div>
             <div class="tab-pane fade" id="wl-sunneversets" role="tabpanel">The Sun Never Sets (2016)</div>
             <div class="tab-pane fade" id="wl-himandher" role="tabpanel">Him and Her (2016)</div>
@@ -422,6 +487,7 @@
 
         </div>
       </div>
+      <h3 class="hidden-sm-up"style="text-align: center;"><a class="btn btn-primary" style="width:100%; color: white;" data-toggle="modal" data-target="#exampleModalLong">Select New Project</a></h3>
     </section>
 
   </div>

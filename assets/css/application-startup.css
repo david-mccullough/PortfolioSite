@@ -185,8 +185,36 @@ a:focus
   background-color: transparent;
 }
 
+.list-group-item {
+  background-color: #F6F6F6;
+  border-left: 0px;
+  border-right: 0px;
+}
+.list-group-item:first-child {
+  border-top-right-radius: 0rem;
+  border-top-left-radius: 0rem; }
+.list-group-item:last-child {
+  margin-bottom: 0;
+  border-bottom-right-radius: 0rem;
+  border-bottom-left-radius: 0rem; }
 
-
+.list-group-item-action {
+  width: 100%;
+  color: #464a4c;
+  text-align: inherit; }
+  .list-group-item-action .list-group-item-heading {
+    color: #292b2c; }
+  .list-group-item-action:hover {
+    color: #464a4c;
+    text-decoration: none;
+    background-color: #e7e7e9; }
+  .list-group-item-action:active {
+    color: #292b2c;
+    background-color: #c5c5c5; }
+  .list-group-item-action:focus {
+    color: #464a4c;
+    text-decoration: none;
+    background-color: #F5F5F5 }
 /* general btn overrides */
 .btn-lg {
   font-size: 18px;
