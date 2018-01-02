@@ -41,6 +41,8 @@
             alert("jQuery is not installed!");
         }
 
+
+
         $(document).ready(function() {
 
           $('#workList a').on('click', function(event) {
@@ -52,6 +54,17 @@
                   }, 500);
               }
           });
+
+          // store the currently selected tab in the hash value
+
+          /*$("#workList a").on("shown.bs.tab", function(e) {
+            var id = $(e.target).attr("href").substr(1);
+            window.location.hash = id;
+          });
+
+          // on load of the page: switch to the currently selected tab
+          var hash = window.location.hash;
+          $('#workList a[href="' + hash + '"]').tab('show');*/
         });
 
         function toggleVideo(state) {
@@ -257,7 +270,7 @@
 
 <div class="block app-work">
   <div class="container">
-    <h3 class="text-uppercase mb-4 text-center">Work</h6>
+    <h3 class="text-uppercase mb-4 text-center">Things I've Made</h6>
     <!-- Project Panel -->
     <section>
       <!-- modal -->
@@ -284,10 +297,10 @@
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bondori" role="tab">Bon Odori</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-gstq" role="tab">God Save The Queen</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-mwm" role="tab">Maybe We're Magic</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-ascend" role="tab">Ascend</a>
+                  <!--<a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-ascend" role="tab">Ascend</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sunneversets" role="tab">The Sun Never Sets</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-himandher" role="tab">Him and Her</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-fbomb" role="tab">Friendly Bomb</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-fbomb" role="tab">Friendly Bomb</a>-->
 
                 <h6 class="list-group-item list-group-item-heading">Freelance and Contract</h6>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
@@ -298,9 +311,13 @@
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-kura" role="tab">Kura</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-godofsand" role="tab">God of Sand</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-photo" role="tab">Photography Course Project</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-photo" role="tab">Photography Project</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-indieblog" role="tab">Indie Game Blog</a>
                   <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-spook" role="tab">Spook! Board Game</a>
+
+                <h6 class="list-group-item list-group-item-heading">Other</h6>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-portfolio" role="tab">Portfolio Website</a>
+                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-3dlevel" role="tab">3D Level Editor Tool</a>
 
               </div>
 
@@ -323,10 +340,10 @@
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-bondori" role="tab">Bon Odori</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-gstq" role="tab">God Save The Queen</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-mwm" role="tab">Maybe We're Magic</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-ascend" role="tab">Ascend</a>
+              <!--<a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-ascend" role="tab">Ascend</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-sunneversets" role="tab">The Sun Never Sets</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-himandher" role="tab">Him and Her</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-fbomb" role="tab">Friendly Bomb</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-fbomb" role="tab">Friendly Bomb</a>-->
 
             <h6 class="list-group-item list-group-item-heading">Freelance and Contract</h6>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
@@ -337,15 +354,20 @@
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-kura" role="tab">Kura</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-godofsand" role="tab">God of Sand</a>
-              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-photo" role="tab">Photography Course Project</a>
+              <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-photo" role="tab">Photography Project</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-indieblog" role="tab">Indie Game Blog</a>
               <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-spook" role="tab">Spook! Board Game</a>
+
+              <h6 class="list-group-item list-group-item-heading">Other</h6>
+                <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-portfolio" role="tab">Portfolio Website</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" onClick="toggleVideo('hide');" href="#wl-3dlevel" role="tab">3D Level Editor Tool</a>
 
           </div>
         </div>
         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 
           <div class="tab-content" id="projectContent">
+
             <div class="tab-pane fade active show" id="wl-scanlines" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Scanlines (2017)</h4></div>
               <div class="wl-body">
@@ -362,7 +384,6 @@
                 </p>
               </div>
             </div>
-
             <div class="tab-pane fade" id="wl-sensei" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Sensei (2017)</h4></div>
               <div class="wl-body">
@@ -377,7 +398,6 @@
                 </p>
               </div>
             </div>
-
             <div class="tab-pane fade" id="wl-drtb" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Don't Rock The Boat (2016)</h4></div>
               <div class="wl-body">
@@ -395,7 +415,6 @@
                 </p>
               </div>
             </div>
-
             <div class="tab-pane fade" id="wl-sgspr" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Super Galactic Star Planet Racers (2017)</h4></div>
               <div class="wl-body">
@@ -408,8 +427,6 @@
                 </p>
               </div>
             </div>
-
-            <div class="tab-pane fade" id="wl-fbomb" role="tabpanel">Friendly Bomb (2015)</div>
 
             <div class="tab-pane fade" id="wl-bones" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Bones (2016)</h4></div>
@@ -427,7 +444,6 @@
                 </p>
               </div>
             </div>
-
             <div class="tab-pane fade" id="wl-bondori" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Bon Odori (2016)</h4></div>
               <div class="wl-body">
@@ -460,7 +476,7 @@
             <div class="tab-pane fade" id="wl-mwm" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Maybe We're Magic (2016)</h4></div>
               <div class="wl-body">
-                <p>No one will be stopping this magical rock tour. Turn-based funkadelic action about escaping a hot pursuit in space.</p>
+                <p>Turn-based funkadelic action about escaping a hot pursuit in space.</p>
                 <p>Featured on <a target="_blank" href="http://www.pcgamer.com/free-games-of-the-week/">PC Gamer</a> as one of the best free games of the week in October 2016.</p>
 
                 <p class="wl-content"><img src="assets/img/game-mwm3.gif" alt="" class="img-thumbnail"></p>
@@ -470,19 +486,136 @@
                 </p>
               </div>
             </div>
+
             <div class="tab-pane fade" id="wl-ascend" role="tabpanel">Ascend (2016)</div>
             <div class="tab-pane fade" id="wl-sunneversets" role="tabpanel">The Sun Never Sets (2016)</div>
             <div class="tab-pane fade" id="wl-himandher" role="tabpanel">Him and Her (2016)</div>
+            <div class="tab-pane fade" id="wl-fbomb" role="tabpanel">Friendly Bomb (2015)</div>
 
-            <div class="tab-pane fade" id="wl-900lbs" role="tabpanel">900lbs of Creative Logo/Web Redesign (2017)</div>
+            <div class="tab-pane fade" id="wl-900lbs" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> 900lbs of Creative Logo/Web Redesign (2017)</h4></div>
+              <div class="wl-body">
+                <p>
+                  Was tasked with doing a logo redesign and some wireframe mockups of a new mobile site for
+                  <a target="_blank" href="http://900lbs.com">900lbs of Creative</a>, a creative studio I had the opportunity to intern with.
+                </p>
+                <p>Assets were created in correspondence with the 900lbs style and branding guide.</p>
+                <p class="wl-content"><img src="assets/img/900lbs-logos-02.png" class="img-thumbnail"></p>
+                <h4 class="wl-content mb-4">
+                  <strong>Sketch Mockups</strong><br>
+                  <iframe src="https://drive.google.com/file/d/1cgJXQMf2-fXcHWw8NXaYnuLtdLl9OciH/preview" width="640" height="480"></iframe>
+                </h4>
+                <h4 class="wl-content mb-4">
+                  <strong>Wireframe</strong><br>
+                  <iframe src="https://drive.google.com/file/d/1-3v2LG3h3SKEOm2O17zMYZdqtGpPEuOd/preview" width="640" height="480"></iframe>
+                </h4>
+              </div>
+            </div>
             <div class="tab-pane fade" id="wl-900lbs-vr" role="tabpanel">Underwater VR Motion Graphics (2017)</div>
             <div class="tab-pane fade" id="wl-bloomgroup" role="tabpanel">Bloom Group LLC (2015)</div>
 
             <div class="tab-pane fade" id="wl-kura" role="tabpanel">Kura (2017)</div>
             <div class="tab-pane fade" id="wl-dote" role="tabpanel">Dungeon of the Endless UX Solutions (2016)</div>
-            <div class="tab-pane fade" id="wl-photo" role="tabpanel">Photography Course Project (2017)</div>
+            <div class="tab-pane fade" id="wl-photo" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Photography Project (2017)</h4></div>
+              <div class="wl-body">
+                <p>
+                  Was tasked with doing a logo redesign and some wireframe mockups of a new mobile site for
+                  <a target="_blank" href="http://900lbs.com">900lbs of Creative</a>, a creative studio I had the opportunity to intern with.
+                </p>
+                <p>Assets were created in correspondence with the 900lbs style and branding guide.</p>
+                <!--<p class="wl-content"><img src="assets/img/photoproject2-00.jpg" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/photoproject2-01.jpg" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/photoproject2-02.jpg" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/photoproject2-03.jpg" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/photoproject2-04.jpg" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/photoproject2-05.jpg" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/photoproject2-06.jpg" class="img-thumbnail"></p>-->
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img class="wl-content" src="assets/img/photoproject2-00.jpg">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/photoproject2-01.jpg">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/photoproject2-02.jpg">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/photoproject2-03.jpg">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/photoproject2-04.jpg">
+                    </div>
+                    <div class="carousel-item">
+                      <img class="d-block w-100" src="assets/img/photoproject2-05.jpg">
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+                <p class="wl-content">
+                  <a class="btn btn-lg btn-github "
+                    href="https://github.com/david-mccullough/Faux3D-LevelEditor" target="_blank">
+                    <span class="fa fa-github"></span> View Repo
+                  </a>
+                </p>
+              </div>
+            </div>
             <div class="tab-pane fade" id="wl-indieblog" role="tabpanel">Indie Made Games Blog (2017)</div>
             <div class="tab-pane fade" id="wl-spook" role="tabpanel">Spook! Board Game (2015)</div>
+
+            <div class="tab-pane fade" id="wl-portfolio" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Portfolio Website (2017)</h4></div>
+              <div class="wl-body">
+                <p>
+                  Was tasked with doing a logo redesign and some wireframe mockups of a new mobile site for
+                  <a target="_blank" href="http://900lbs.com">900lbs of Creative</a>, a creative studio I had the opportunity to intern with.
+                </p>
+                <p>Assets were created in correspondence with the 900lbs style and branding guide.</p>
+                <p class="wl-content"><img src="assets/img/900lbs-logos-02.png" class="img-thumbnail"></p>
+                <p class="wl-content">
+                  <a class="btn btn-lg btn-github "
+                    href="https://github.com/david-mccullough/Faux3D-LevelEditor" target="_blank">
+                    <span class="fa fa-github"></span> View Repo
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="wl-3dlevel" role="tabpanel">
+              <div class="wl-header"><h4><span class="fa fa-gamepad"></span> 3D Level Editor Tool (2017)</h4></div>
+              <div class="wl-body">
+                <p>
+                  I created a custom level editor for GameMaker Studio that made it possible to build levels for 2D games with the faux 3D art style (sprite stacking) exemplified
+                  <a target="_blank" href="https://www.youtube.com/watch?v=_BztMPC5Kk4">here.</a>
+                </p>
+                <p>I learned a lot about tool development during this process, especially after observing my team members use the editor on other projects.</p>
+                <p class="wl-content"><img src="assets/img/leveleditor00.gif" class="img-thumbnail"></p>
+                <p class="wl-content"><img src="assets/img/leveleditor01.gif" class="img-thumbnail"></p>
+
+                <p class="wl-content">
+                  <a class="btn btn-lg btn-github "
+                    href="https://github.com/david-mccullough/Faux3D-LevelEditor" target="_blank">
+                    <span class="fa fa-github"></span> View Repo
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -499,30 +632,58 @@
   <footer class="footer"
   style="background-repeat:repeat; background-image: url(assets/img/cartographer.png);">
       <div class="container text-center">
-            <a class="btn btn-lg btn-social-icon btn-google mx-2"
-            href="mailto:davidmcculloughw@gmail.com" target="_blank">
-              <span class="fa fa-envelope" style="vertical-align: middle; "></span>
-            </a>
+        <div class="hidden-sm-up">
+          <a class="btn btn-sm btn-social-icon btn-google"
+          href="mailto:davidmcculloughw@gmail.com" target="_blank">
+            <span class="fa fa-envelope" style="vertical-align: middle; "></span>
+          </a>
 
-            <a class="btn btn-lg btn-social-icon btn-twitter mx-2"
-            href="http://twitter.com/loficacti" target="_blank">
-              <span class="fa fa-twitter"></span>
-            </a>
+          <a class="btn btn-sm btn-social-icon btn-twitter"
+          href="http://twitter.com/loficacti" target="_blank">
+            <span class="fa fa-twitter"></span>
+          </a>
 
-            <a class="btn btn-lg btn-social-icon btn-itch mx-2"
-            href="https://loficacti.itch.io/" target="_blank">
-              <img src="assets/img/itchio-textless.svg" alt="">
-            </a>
+          <a class="btn btn-sm btn-social-icon btn-itch"
+          href="https://loficacti.itch.io/" target="_blank">
+            <img src="assets/img/itchio-textless.svg" alt="">
+          </a>
 
-            <a class="btn btn-lg btn-social-icon btn-linkedin mx-2"
-            href="https://www.linkedin.com/in/david-mccullough-12a2109a/" target="_blank">
-              <span class="fa fa-linkedin"></span>
-            </a>
+          <a class="btn btn-sm btn-social-icon btn-linkedin"
+          href="https://www.linkedin.com/in/david-mccullough-12a2109a/" target="_blank">
+            <span class="fa fa-linkedin"></span>
+          </a>
 
-            <a class="btn btn-lg btn-social-icon btn-github mx-2"
-            href="https://github.com/david-mccullough" target="_blank">
-              <span class="fa fa-github"></span>
-            </a>
+          <a class="btn btn-sm btn-social-icon btn-github"
+          href="https://github.com/david-mccullough" target="_blank">
+            <span class="fa fa-github"></span>
+          </a>
+        </div>
+        <div class="hidden-xs-down">
+          <a class="btn btn-lg btn-social-icon btn-google mx-2"
+          href="mailto:davidmcculloughw@gmail.com" target="_blank">
+            <span class="fa fa-envelope" style="vertical-align: middle; "></span>
+          </a>
+
+          <a class="btn btn-lg btn-social-icon btn-twitter mx-2"
+          href="http://twitter.com/loficacti" target="_blank">
+            <span class="fa fa-twitter"></span>
+          </a>
+
+          <a class="btn btn-lg btn-social-icon btn-itch mx-2"
+          href="https://loficacti.itch.io/" target="_blank">
+            <img src="assets/img/itchio-textless.svg" alt="">
+          </a>
+
+          <a class="btn btn-lg btn-social-icon btn-linkedin mx-2"
+          href="https://www.linkedin.com/in/david-mccullough-12a2109a/" target="_blank">
+            <span class="fa fa-linkedin"></span>
+          </a>
+
+          <a class="btn btn-lg btn-social-icon btn-github mx-2"
+          href="https://github.com/david-mccullough" target="_blank">
+            <span class="fa fa-github"></span>
+          </a>
+        </div>
 
       </div>
     </footer>

@@ -225,6 +225,7 @@ a:focus
 .btn-lg:not(.btn-block) {
   padding: 12px 50px;
 }
+
 @media (min-width: 768px) {
   .btn-lg:not(.btn-block) {
     width: auto;
@@ -244,6 +245,7 @@ a:focus
 html {
     font-size: 16px;
 }
+
 
 @media(max-width: 1199px) {
   html {
@@ -289,10 +291,8 @@ html {
     height: 240px; }
   .project-hover {
     height: 240px; }
-
-
-
 }
+
 
 .project {
 	max-width: 300px;
