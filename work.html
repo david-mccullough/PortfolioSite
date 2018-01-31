@@ -18,65 +18,58 @@
     <meta name="keywords" content="">
     <meta name="author" content="">
 
-    <title>
-
-        David McCullough
-
-    </title>
+    <title>David McCullough</title>
 
 
-      <link href="assets/css/style.css" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
-      <link href="assets/css/toolkit-startup.css" rel="stylesheet">
-      <link href="assets/css/application-startup.css" rel="stylesheet">
-      <link href="assets/css/bootstrap-social.css" rel="stylesheet" >
-      <link href="assets/css/font-awesome.css" rel="stylesheet" >
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link href="assets/css/toolkit-startup.css" rel="stylesheet">
+    <link href="assets/css/application-startup.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-social.css" rel="stylesheet" >
+    <link href="assets/css/font-awesome.css" rel="stylesheet" >
 
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <script>
+      if(typeof jQuery == "undefined")
+      {
+          alert("jQuery is not installed!");
+      }
 
-      <script>
-        if(typeof jQuery == "undefined")
-        {
-            alert("jQuery is not installed!");
-        }
+      $(document).ready(function() {
 
-
-
-        $(document).ready(function() {
-
-          $('#workList a').on('click', function(event) {
-              var target = $('#body');
-              if( target.length ) {
-                  event.preventDefault();
-                  $('html, body').stop().animate({
-                      scrollTop: target.offset().top
-                  }, 500);
-              }
-          });
-
-          // store the currently selected tab in the hash value
-
-          /*$("#workList a").on("shown.bs.tab", function(e) {
-            var id = $(e.target).attr("href").substr(1);
-            window.location.hash = id;
-          });
-
-          // on load of the page: switch to the currently selected tab
-          var hash = window.location.hash;
-          $('#workList a[href="' + hash + '"]').tab('show');*/
+        $('#workList a').on('click', function(event) {
+            var target = $('#body');
+            if( target.length ) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 500);
+            }
+            $("#dynamic").load($(this).attr('href'));
         });
 
-        function toggleVideo(state) {
-            // if state == 'hide', hide. Else: show video
-            var div = document.getElementById("video");
-            var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
-            func = state == 'hide' ? 'pauseVideo' : 'playVideo';
-            iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
-        }
+        // store the currently selected tab in the hash value
 
-      </script>
+        /*$("#workList a").on("shown.bs.tab", function(e) {
+          var id = $(e.target).attr("href").substr(1);
+          window.location.hash = id;
+        });
 
+        // on load of the page: switch to the currently selected tab
+        var hash = window.location.hash;
+        $('#workList a[href="' + hash + '"]').tab('show');*/
+      });
+
+      function toggleVideo(state) {
+          // if state == 'hide', hide. Else: show video
+          var div = document.getElementById("video");
+          var iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+          func = state == 'hide' ? 'pauseVideo' : 'playVideo';
+          iframe.postMessage('{"event":"command","func":"' + func + '","args":""}','*');
+      }
+
+    </script>
 
     <style>
       /* note: this is a hack for ios iframe for bootstrap themes shopify page */
@@ -151,13 +144,11 @@
       background-color: #08CE78;
       border-color: #08CE78;
       }
-
-    .list-group-item-heading {
+      .list-group-item-heading {
       background-color: #494E52;
       color: #fff;
-    }
-
-  </style>
+      }
+    </style>
 
 </head>
 
@@ -428,6 +419,8 @@
               </div>
             </div>
 
+            <section stlye="background-color:#0505f5" id="dynamic"></section>
+
             <div class="tab-pane fade" id="wl-bones" role="tabpanel">
               <div class="wl-header"><h4><span class="fa fa-gamepad"></span> Bones (2016)</h4></div>
               <div class="wl-body">
@@ -532,10 +525,9 @@
               <div class="wl-header"><h4><span class="fa fa-university"></span> Kura (2017)</h4></div>
               <div class="wl-body">
                 <p>
-                  I was tasked with redesiging a logo and creating wireframe mockups of a new mobile site for
-                  <a target="_blank" href="http://900lbs.com">900lbs of Creative</a>, a creative studio I had the opportunity to intern with.
+                  Kura was created as part of a semester project assigned in the Systems Design course at UTD. Throughout the semester, I was responsible for continusouly developing a GDD and respective game prototype while recieving weekly feedback from peers.
                 </p>
-                <p>Assets were created in correspondence with the 900lbs style and branding guide.</p>
+                <p>Kura is an action platformer with roguelike alements centered around a samurai and his cursed, life-stealing Katana.</p>
                 <p class="wl-content">Video here</p>
                 <h4 class="wl-content mb-4">
                   <strong>Game Design Document</strong><br>
@@ -546,7 +538,7 @@
                     href="https://github.com/david-mccullough/PortfolioSite" target="_blank">
                     <span class="fa fa-download"></span> Download Game
                   </a>
-                   <br>(Gamepad required)
+                   <br class="text-muted">(Gamepad required)
                 </p>
 
               </div>
@@ -555,7 +547,8 @@
               <div class="wl-header"><h4><span class="fa fa-university"></span> Dungeon of the Endless UX Solutions (2016)</h4></div>
               <div class="wl-body">
                 <p>
-                  As part of my semester project for the UX for Games course offered at UTD, I addressed major user pain points in Amplitude Studios' Dungeon of the Endless. After conducting qualitative and quantitative research and performing a competitive analysis, I applied design principles to solve UX issues within the game.
+                  As part of my semester project for the UX for Games course offered at UTD, I addressed the major user pain points in Amplitude Studios' <i>Dungeon of the Endless</i>. After conducting qualitative and quantitative research and performing a competitive analysis,
+                  I applied design principles to solve UX issues within the game. Additionally, I summarized my findings and solutions into a concise slide deck and presented it before peers and two UX design professionals.
                 </p>
               </div>
             </div>
@@ -563,8 +556,11 @@
               <div class="wl-header"><h4><span class="fa fa-university"></span> God of Sand (2016)</h4></div>
               <div class="wl-body">
                 <p>
-                  Coming soon!
+                  I was selected among undergraduate and graduate applicants to collaborate on a digital game vertical slice in a multi-disciplinary game industry simulation course.
+
+                  As a programmer, my responsibilities included developing UI systems, enemy AI, game state architecture, and general feedback systems in Unity while working closely with producers, design leads, and other developers.
                 </p>
+                <p>God of Sand is a third-person action platformer where the player uses a grappling hook to navigate a post-apocolyptic wasteland and defeat massive giants à la <i>Shadow of the Colossus</i>.</p>
               </div>
             </div>
             <div class="tab-pane fade" id="wl-photo" role="tabpanel">
@@ -647,7 +643,7 @@
                 <p>
                   Yes, my portfolio is an item on my portfolio!
                 </p>
-                <p>I decided to code my portfolio site myself as opportunity to flex my skills with HTML, CSS, and JavaScript and to become more familiar with Bootstrap.</p>
+                <p>I coded my portfolio site as an opportunity to practice my skills with HTML, CSS, and JavaScript and to become familiar with Bootstrap.</p>
 
                 <p class="wl-content">
                   <a class="btn btn-lg btn-github "
