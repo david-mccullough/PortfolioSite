@@ -1,0 +1,37 @@
+<html>
+	<style>
+	.aspect-ratio {
+	  position: relative;
+	  width: 100%;
+	  height: 0;
+	  padding-bottom: 56%; /* The height of the item will now be 56% of the width. */
+	}
+
+	/* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+	.aspect-ratio iframe {
+	  position: absolute;
+	  width: 100%;
+	  height: 100%;
+	  left: 0;
+	  top: 0;
+	}
+	</style>
+	<body>
+		<div class="wl-header"><h4><span class="fa fa-gamepad"></span> Don't Rock The Boat (2016)</h4></div>
+		<div class="wl-body">
+			<p>
+				A game about a cruise ship waiter on rocky waters. The player must keep vacationeers refreshed without spilling their water!
+				<strong>Awarded 1st Place at <a target="_blank" href="http://www.chillennium.com">Chillennium 2016</a>, the largest national student game jam at the time.</strong>
+			</p>
+
+			<p>Responsibilties included game design, programming, and art/animation.</p>
+			<div class="aspect-ratio wl-content">
+					<div class="" id="video"><iframe width="520" height="315" src="https://www.youtube.com/embed/wDgsioUo-sY?enablejsapi=1&modestbranding=1&rel=0&showinfo=0&color=white" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe></div>
+			</div>
+			<p class="wl-content"></p>
+			<p class="wl-content"><img src="assets/img/chillennium.jpg" alt="" class="img-thumbnail"></p>
+			<p class="itch-widget wl-content">
+			<iframe frameborder="0" src="https://itch.io/embed/87440" width="552" height="167"></iframe>
+			</p>
+		</div>
+</html>
