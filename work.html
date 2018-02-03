@@ -55,13 +55,24 @@
             loadurl = $this.attr('href'),
             targ = $this.attr('data-target');
 
+          var pos = $('#body');
+
+
           if ($(targ).is(':empty')) {
             $.get(loadurl, function(data) {
               $(targ).html(data);
             });
           }
 
+          if( pos.length ) {
+              $('html, body').animate({
+                  scrollTop: pos.offset().top
+              }, 500);
+          }
+
           $this.tab('show');
+          $('#exampleModalLong').modal('hide');
+
           return false;
         });
 
@@ -191,6 +202,9 @@
       background-color: #494E52;
       color: #fff;
       }
+      .clickable {
+        cursor: pointer;
+      }
     </style>
 
 </head>
@@ -313,7 +327,7 @@
     <!-- Project Panel -->
     <section>
       <!-- modal -->
-      <h3 class="hidden-sm-up"style="text-align: center;"><a class="btn btn-primary" style="width:100%; color: white;" data-toggle="modal" data-target="#exampleModalLong">Select New Project</a></h3>
+      <h3 class="hidden-sm-up"style="text-align: center;"><button class="btn btn-primary" style="width:100%; color: white;" data-toggle="modal" data-target="#exampleModalLong">Select New Project</button></h3>
       <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -327,36 +341,36 @@
             <div class="modal-body px-0 py-0">
               <div class="list-group" id="workList">
 
-                <h6 class="list-group-item list-group-item-heading" style="border-radius: 0;">Games</h6>
-                  <a class="list-group-item list-group-item-action active" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-scanlines" role="tab">Scanlines</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-sensei" role="tab">Sensei</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-sgspr" role="tab">Super Galactic Star Planet Racers</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-drtb" role="tab">Don't Rock The Boat</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-bones" role="tab">Bones</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-bondori" role="tab">Bon Odori</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-gstq" role="tab">God Save The Queen</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-mwm" role="tab">Maybe We're Magic</a>
-                  <!--<a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-ascend" role="tab">Ascend</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-sunneversets" role="tab">The Sun Never Sets</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-himandher" role="tab">Him and Her</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-fbomb" role="tab">Friendly Bomb</a>-->
+                <h6 class="list-group-item list-group-item-heading">Games</h6>
+                  <a class="clickable list-group-item list-group-item-action active" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-scanlines.html" data-target="#wl-scanlines" role="tab">Scanlines</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-sensei.html" data-target="#wl-sensei" role="tab">Sensei</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-sgspr.html" data-target="#wl-sgspr" role="tab">Super Galactic Star Planet Racers</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-drtb.html" data-target="#wl-drtb" role="tab">Don't Rock The Boat</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-bones.html" data-target="#wl-bones" role="tab">Bones</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-bondori.html" data-target="#wl-bondori" role="tab">Bon Odori</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-gstq.html" data-target="#wl-gstq" role="tab">God Save The Queen</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-mwm.html" data-target="#wl-mwm" role="tab">Maybe We're Magic</a>
+                  <!--<a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" data-target="#wl-ascend" role="tab">Ascend</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" data-target="#wl-sunneversets" role="tab">The Sun Never Sets</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" data-target="#wl-himandher" role="tab">Him and Her</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" data-target="#wl-fbomb" role="tab">Friendly Bomb</a>-->
 
                 <h6 class="list-group-item list-group-item-heading">Freelance and Contract</h6>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-900lbs-vr" role="tab">Underwater VR Motion Graphics</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-bloomgroup" role="tab">Bloom Group LLC</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-900lbs.html" data-target="#wl-900lbs" role="tab">900lbs of Creative Redesign</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-900lbs-vr.html" data-target="#wl-900lbs-vr" role="tab">Underwater VR Motion Graphics</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-bloomgroup.html" data-target="#wl-bloomgroup" role="tab">Bloom Group LLC</a>
 
                 <h6 class="list-group-item list-group-item-heading">University Projects</h6>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-kura" role="tab">Kura</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-godofsand" role="tab">God of Sand</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-photo" role="tab">Photography Project</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-indieblog" role="tab">Indie Game Blog</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-spook" role="tab">Spook! Board Game</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-kura.html" data-target="#wl-kura" role="tab">Kura</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-dote.html" data-target="#wl-dote" role="tab">Dungeon of the Endless UX Solutions</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-godofsand.html" data-target="#wl-godofsand" role="tab">God of Sand</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-photo.html" data-target="#wl-photo" role="tab">Photography Project</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-indieblog.html" data-target="#wl-indieblog" role="tab">Indie Game Blog</a>
+                  <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-spook.html" data-target="#wl-spook" role="tab">Spook! Board Game</a>
 
-                <h6 class="list-group-item list-group-item-heading">Other</h6>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-portfolio" role="tab">Portfolio Website</a>
-                  <a class="list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="#wl-3dlevel" role="tab">3D Level Editor Tool</a>
+                  <h6 class="list-group-item list-group-item-heading">Other</h6>
+                    <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-portfolio.html" data-target="#wl-portfolio" role="tab">Portfolio Website</a>
+                    <a class="clickable list-group-item list-group-item-action" data-dismiss="modal" data-toggle="tabajax" onClick="toggleVideo('hide');" href="/work-panels/wl-3dlevel.html" data-target="#wl-3dlevel" role="tab">3D Level Editor Tool</a>
 
               </div>
 
@@ -440,7 +454,7 @@
           </div>
         </div>
       </div>
-      <h3 class="hidden-sm-up"style="text-align: center;"><a class="btn btn-primary" style="width:100%; color: white;" data-toggle="modal" data-target="#exampleModalLong">Select New Project</a></h3>
+      
     </section>
 
   </div>

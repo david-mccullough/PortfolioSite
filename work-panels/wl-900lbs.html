@@ -1,4 +1,21 @@
 <html>
+<style>
+.aspect-ratio {
+	position: relative;
+	width: 100%;
+	height: 0;
+	padding-bottom: 75%; /* The height of the item will now be 56% of the width. */
+}
+
+/* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+.aspect-ratio iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+</style>
 	<body>
 		<div class="wl-header"><h4><span class="fa fa-briefcase"></span> 900lbs of Creative Logo/Web Redesign (2017)</h4></div>
 		<div class="wl-body">
@@ -8,14 +25,20 @@
 			</p>
 			<p>Assets were created in correspondence with the 900lbs style and branding guide.</p>
 			<p class="wl-content"><img src="assets/img/900lbs-logos-02.png" class="img-thumbnail"></p>
-			<h4 class="wl-content mb-4">
-				<strong>Sketch Mockups</strong><br>
-				<iframe src="https://drive.google.com/file/d/1cgJXQMf2-fXcHWw8NXaYnuLtdLl9OciH/preview" width="640" height="480"></iframe>
-			</h4>
-			<h4 class="wl-content mb-4">
-				<strong>Wireframe</strong><br>
-				<iframe src="https://drive.google.com/file/d/1-3v2LG3h3SKEOm2O17zMYZdqtGpPEuOd/preview" width="640" height="480"></iframe>
-			</h4>
+
+			<div class="aspect-ratio wl-content mb-4">
+				<h4 class="">
+					<strong>Sketch Mockups</strong><br>
+					<iframe src="https://drive.google.com/file/d/1cgJXQMf2-fXcHWw8NXaYnuLtdLl9OciH/preview" width="640" height="480"></iframe>
+				</h4>
+			</div>
+
+			<div class="aspect-ratio wl-content mb-4">
+				<h4 class="">
+					<strong>Wireframe</strong><br>
+					<iframe src="https://drive.google.com/file/d/1-3v2LG3h3SKEOm2O17zMYZdqtGpPEuOd/preview" width="640" height="480"></iframe>
+				</h4>
+			</div>
 		</div>
   </body>
 </html>
