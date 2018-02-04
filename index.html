@@ -23,6 +23,9 @@
         David McCullough
 
     </title>
+    <link rel="icon"
+      type="image/png"
+      href="http://example.com/myicon.png">
 
 
       <link href="assets/css/style.css" rel="stylesheet">
@@ -48,6 +51,22 @@
         }
       }
 
+      .aspect-ratio {
+      	position: relative;
+      	width: 100%;
+      	height: 0;
+      	padding-bottom: 75%; /* The height of the item will now be 56% of the width. */
+      }
+
+      /* Adjust the iframe so it's rendered in the outer-width and outer-height of it's parent */
+      .aspect-ratio .project {
+      	position: absolute;
+      	width: 100%;
+      	height: 100%;
+      	left: 0;
+      	top: 0;
+      }
+
     </style>
 
   </head>
@@ -56,11 +75,12 @@
 <section id="header">
 
 <div class="block-inverse app-header"
-style="background-repeat:repeat; background-image: url(assets/img/cartographer.png);">
+style="background-repeat:repeat; background-image: url(assets/img/cartographer2.png);">
 
   <div class="container app-navbar">
   <nav class="navbar navbar-toggleable-sm" style="justify-content: center; max-width: 1000px;  margin:0 auto;">
 
+    <div class="title">
     <a href="index.html">
     <div class="media mr-auto hidden-sm-down" style="min-width: 600px">
     <img class="mr-4 hidden-xs-down profPic rounded-circle" src="david-sm.jpg" alt="photo">
@@ -73,7 +93,7 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
             UX designer.<br>
             game designer.<br>
             pixel artist.<br>
-            stupid kid.<br>
+            part of the problem.<br>
             programmer.
           </span1>
           </b>
@@ -81,6 +101,7 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
       </div>
     </div>
     </a>
+  </div>
 
     <div style="width:0; margin: auto;">
 
@@ -106,6 +127,7 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
       </ul>
     </div>
 
+    <div class="title">
     <a href="index.html">
     <div class="hidden-md-up text-xs-center">
     <span class="my-auto" >
@@ -121,7 +143,7 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
         UX designer<br>
         game designer<br>
         pixel artist<br>
-        stupid kid<br>
+        all-around sweetheart<br>
         programmer
       </span1>
       </b>
@@ -129,6 +151,7 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
     </span>
   </div>
   </a>
+</div>
 
 
     <div class="hidden-md-up text-uppercase">
@@ -162,152 +185,116 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
 <div class="block app-block-marketing-grid pb-4 pt-3">
 
   <div class="text-xs-center my-5">
-    <h3 class="text-uppercase mb-2">Highlighted Work</h6>
-    <h5 class="text-muted"><a href="work.html">List of all work.</a></h3>
-  </div>
-    <!-- Modal
-    <h5 class="text-muted"><a href="" data-toggle="modal" data-target="#exampleModalLong">List of all work.</a></h3>
-  </div>
-
-
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">All work</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="mytextdiv mb-2">
+        <div class="divider"></div>
+        <h3 class="mytexttitle text-center" style="padding-left: 10px;">
+           Highlighted Projects
+        </h3>
+        <div class="divider"></div>
       </div>
-      <div class="modal-body px-4">
-        <h2>Game Jams</h2>
-        <ul>
-          <h5>AGBIC</h5>
-          <ul>
-            <li><a title="read between the lines" href="https://www.youtube.com/watch?v=HEOyRuuyNzA&feature=youtu.be">Scanlines (2017)</a></li>
-          </ul>
-          <h5>Chillennium</h5>
-          <ul>
-          <li><a title="student becomes the master" href='https://loficacti.itch.io/sensei'>Sensei (2017)</a></li>
-          <li><a title="hold yourself to ridiculous standards" href='https://loficacti.itch.io/dont-rock-the-boat'>Don't Rock The Boat (2016)</a></li>
-          </ul>
-          <h5>UTD SGDA</h5>
-          <ul>
-            <li><a title="competitive grapple-based orbital racing" href="https://loficacti.itch.io/sgspr">Super Galactic Star Planet Racers (2017)</a></li>
-            <li><a title="the loveable explosive" href="https://loficacti.itch.io/friendly-bomb-demo">Friendly Bomb (2015)</a></li>
-          </ul>
-        </ul>
-        <h2>Other Games</h2>
-        <ul>
-          <li><a title="get rich" href="https://loficacti.itch.io/bones">Bones (2016)</a></li>
-          <li><a title="" href="https://loficacti.itch.io/bon-odori">Bon Odori (2016)</a></li>
-          <li><a title="" href="https://loficacti.itch.io/god-save-the-queen">God Save The Queen (2016)</a></li>
-          <li><a title="" href="https://loficacti.itch.io/maybe-were-magic">Maybe We're Magic (2016)</a></li>
-          <li><a title="" href="https://loficacti.itch.io/ascend">Ascend (2016)</a></li>
-          <li><a title="" href="https://loficacti.itch.io/sun-never-sets">The Sun Never Sets (2016)</a></li>
-          <li><a title="" href="https://loficacti.itch.io/him-and-her">Him and Her (2016)</a></li>
-        </ul>
-
-        <h2>Freelance and Contract</h2>
-        <ul>
-          <li><a title="" href="misc-work#900lbs">900lbs of Creative Logo/Web Redesign (2017)</a></li>
-          <li><a title="" href="misc-work#900lbs-vr">Underwater VR Motion Graphics (2017)</a></li>
-          <li><a title="" href="misc-work#bloom.html">Bloom Group LLC (2015)</a></li>
-        </ul>
-
-        <h2>University Projects</h2>
-        <ul>
-          <li><a title="" href="misc-work#kura">Kura (2017)</a></li>
-          <li><a title="" href="misc-work#dote.html">Dungeon of the Endless UX Solutions (2016)</a></li>
-          <li><a title="" href="misc-work#school-photography.html">Photography Course Project (2017)</a></li>
-          <li><a title="" href="https://indiemadegames.wordpress.com/">Indie Game Blog (2016)</a></li>
-          <li><a title="" href="misc-work#school-spook">Spook! Board Game (2015)</a></li>
-        </ul>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
+    <h5 class="text-muted"><a href="work.html">View more work here!</a></h3>
   </div>
-</div>
- -->
+
   <div class="row app-marketing-grid">
-    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
-      <div class="project project-scanlines">
-      	<div class="project-hover">
-        	<h2><span class="fa fa-gamepad"></span> Scanlines</h2>
-            <hr/>
-            <p>A fourth-wall breaking narrative experience about interacting with an A.I.</p>
-            <p>Submitted to <a class ="independent-link" target="_blank" href="https://itch.io/jam/a-game-by-its-cover-2017">A Game By It's Cover Jam 2017.</a></p>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 px-3 mb-5">
+      <div class="aspect-ratio">
+        <div class="project project-scanlines">
+        	<div class="project-hover hidden-xs-down">
+          	<h2><span class="fa fa-gamepad"></span> Scanlines</h2>
+              <hr/>
+              <p>A fourth-wall breaking narrative experience about interacting with an A.I.</p>
+              <p>Submitted to <a class ="independent-link" target="_blank" href="https://itch.io/jam/a-game-by-its-cover-2017">A Game By It's Cover Jam 2017.</a></p>
+          </div>
+          <a class='default-link' href='work.html#wl-scanlines'></a>
         </div>
-        <a class='default-link' href='https://loficacti.itch.io/scanlines'></a>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
-      <div class="project project-drtb">
-      	<div class="project-hover">
-          <h2><span class="fa fa-gamepad"></span> Don't Rock The Boat</h2>
-            <hr/>
-            <p>A game about a cruise ship waiter on rocky waters.</p>
-            <p>Awarded 1st Place at <a class="independent-link" target="_blank" href="http://www.chillennium.com">Chillennium 2016</a>, the largest national student game jam.</p>
-            <a class='default-link' href='https://loficacti.itch.io/dont-rock-the-boat'></a>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 px-3 mb-5">
+      <div class="aspect-ratio">
+        <div class="project project-drtb">
+        	<div class="project-hover hidden-xs-down">
+            <h2><span class="fa fa-gamepad"></span> Don't Rock The Boat</h2>
+              <hr/>
+              <p>A game about a cruise ship waiter on rocky waters.</p>
+              <p>Awarded 1st Place at <a class="independent-link" target="_blank" href="http://www.chillennium.com">Chillennium 2016</a>, the largest national student game jam.</p>
+          </div>
+          <a class='default-link' href='work.html#wl-drtb'></a>
         </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 px-3 mb-5">
+      <div class="aspect-ratio">
+        <div class="project project-mwm">
+        	<div class="project-hover hidden-xs-down">
+            <h2><span class="fa fa-gamepad"></span> Maybe We're Magic</h2>
+              <hr/>
+              <p>Turn-based funkadelic action about escaping a hot pursuit in space.</p>
+          </div>
+          <a class='default-link' href='work.html#wl-mwm'></a>
+        </div>
+      </div>
+    </div>
 
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
-      <div class="project project-mwm">
-      	<div class="project-hover">
-          <h2><span class="fa fa-gamepad"></span> Maybe We're Magic</h2>
-            <hr/>
-            <p>Turn-based funkadelic action about escaping a hot pursuit in space.</p>
-            <p>Featured on <a class ="independent-link" target="_blank" href="http://www.pcgamer.com/free-games-of-the-week/">PC Gamer</a> as one of the best free games of the week in October 2016.</p>
-          <a class='default-link' href='#'></a>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 px-3 mb-5">
+      <div class="aspect-ratio">
+        <div class="project project-gstq">
+        	<div class="project-hover hidden-xs-down">
+            <h2><span class="fa fa-gamepad"></span> God Save The Queen</h2>
+              <hr/>
+              <p>Asymmetric multiplayer game that pits a sniper against an incognito spy.</p>
+              <p>Received well on itch. Modest success with 9000+ downloads.</p>
+          </div>
+          <a class='default-link' href='work.html#wl-gstq'></a>
         </div>
       </div>
     </div>
-
-    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
-      <div class="project project-gstq">
-      	<div class="project-hover">
-          <h2><span class="fa fa-gamepad"></span> God Save The Queen</h2>
-            <hr/>
-            <p>Asymmetric multiplayer game that pits a sniper against an incognito spy.</p>
-            <p>Received well on itch. Modest success with 9000+ downloads.</p>
-          <a class='default-link' href='https://loficacti.itch.io/god-save-the-queen'></a>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 px-3 mb-5">
+      <div class="aspect-ratio">
       <div class="project project-dote-ux">
-      	<div class="project-hover">
-          <h2><span class="fa fa-pie-chart"></span> Dungeon of the Endless UX Solutions</h2>
-            <hr/>
-            <p>UX research and design solutions project completed for course at UTD.</p>
-          <a class='default-link' href='http://www.coroflot.com/davidmccullough/DotE-UX-Design-Solutions'></a>
+        	<div class="project-hover hidden-xs-down">
+            <h2><span class="fa fa-university"></span> Dungeon of the Endless: UX Solutions</h2>
+              <hr/>
+              <p>UX research and design solutions project completed for UX course at UTD.</p>
+          </div>
+          <a class='default-link' href='work.html#wl-dote'></a>
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-6 col-sm-12 px-4 mb-5">
-      <div class="project project-bones">
-      	<div class="project-hover">
-          <h2><span class="fa fa-gamepad"></span> Bones</h2>
-            <hr/>
-            <p>Roguelite action where the player can choose to end a run early to permanently save loot or risk it all for bigger rewards.</p>
-            <p>Features procedural dungeons and a loveable skeleton shopkeeper.</p>
-          <a class='default-link' href='https://loficacti.itch.io/bones'></a>
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 px-3 mb-5">
+      <div class="aspect-ratio">
+        <div class="project project-kura">
+        	<div class="project-hover hidden-xs-down">
+            <h2><span class="fa fa-university"></span> Kura</h2>
+              <hr/>
+              <p>Action platformer with roguelike elements about a ronin and his cursed relationship with a possessed katana.</p>
+              <p>Developed for Systems Design course at UTD.</p>
+          </div>
+          <a class='default-link' href='work.html#wl-kura'></a>
+        </div>
       </div>
     </div>
+
+    <!--<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 px-3 mb-5">
+      <div class="aspect-ratio">
+        <div class="project project-bones">
+        	<div class="project-hover hidden-xs-down">
+            <h2><span class="fa fa-gamepad"></span> Bones</h2>
+              <hr/>
+              <p>Roguelite action where the player can choose to end a run early to permanently save loot or risk it all for bigger rewards.</p>
+              <p>Features procedural dungeons and a loveable skeleton shopkeeper.</p>
+          </div>
+        <a class='default-link' href='work.html#wl-bones'></a>
+      </div>
+    </div>
+  </div>-->
 
   </div>
-
 </div>
 </section>
 
 <section id="footer">
   <footer class="footer"
-  style="background-repeat:repeat; background-image: url(assets/img/cartographer.png);">
+  style="background-repeat:repeat; background-image: url(assets/img/cartographer2.png);">
       <div class="container text-center">
         <div class="hidden-sm-up">
           <a class="btn btn-sm btn-social-icon btn-google"
@@ -326,7 +313,7 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
           </a>
 
           <a class="btn btn-sm btn-social-icon btn-linkedin"
-          href="https://www.linkedin.com/in/david-mccullough-12a2109a/" target="_blank">
+          href="https://www.linkedin.com/in/david-w-mccullough/" target="_blank">
             <span class="fa fa-linkedin"></span>
           </a>
 
@@ -352,7 +339,7 @@ style="background-repeat:repeat; background-image: url(assets/img/cartographer.p
           </a>
 
           <a class="btn btn-lg btn-social-icon btn-linkedin mx-2"
-          href="https://www.linkedin.com/in/david-mccullough-12a2109a/" target="_blank">
+          href="https://www.linkedin.com/in/david-w-mccullough/" target="_blank">
             <span class="fa fa-linkedin"></span>
           </a>
 

@@ -1,3 +1,5 @@
+:root { overflow-y: scroll; }
+
 /* navbar */
 .app-navbar {
   font-weight: 500;
@@ -105,7 +107,7 @@ a:focus
 
 .app-about
 {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -117,15 +119,26 @@ a:focus
 }
 
 .app-header a {
-    color: white;
+    color: #D2D3D9;
     text-decoration: none;
 }
 
 .app-header a:hover {
     text-decoration: none;
+    color: #FFFFFF;
 }
 
+.app-header a:focus {
+    text-decoration: none;
+    color: #A2A3A9;/*#08CE78;*/
+}
 
+.title a h1 {
+  color: white;
+}
+.title a h3, .title a h2, .title a h3:hover, .title a h2:hover{
+  color: #D2D3D9;
+}
 /* marketing grid block */
 .app-marketing-grid {
 
@@ -134,8 +147,15 @@ a:focus
   margin-right: auto;
 }
 
+.app-block-marketing-grid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
 .app-block-marketing-grid .container {
   margin-bottom: -60px;
+
 }
 .app-marketing-grid .m-b {
   margin-bottom: 10px !important;
@@ -254,10 +274,6 @@ html {
   .profPic {
     max-width: 160px;
   }
-  .project {
-    height: 300px; }
-  .project-hover {
-    height: 300px; }
 }
 @media(max-width: 991px) {
   html {
@@ -266,54 +282,85 @@ html {
   .profPic {
     max-width: 128px;
   }
-    .project {
-      height: 200px; }
-    .project-hover {
-      height: 200px; }
 }
 @media(max-width: 767px) {
   html {
     font-size: 12px;
   }
   .profPic {
-    max-width: 96px;
+    max-width: 108px;
+    margin-bottom: 0.5em;
   }
-  .project {
-    height: 300px; }
-  .project-hover {
-    height: 300px; }
 }
 @media(max-width: 575px) {
   .profPic {
     display: hidden;
   }
-  .project {
-    height: 240px; }
-  .project-hover {
-    height: 240px; }
+
+  .project:hover {
+    outline-width: 3px;
+    outline-color: #ffffff;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
 }
 
+@media(min-width: 576px)
+{
+  .project-gstq:hover {
+    background-image: url(../img/game-gstq.gif);
+  }
+  .project-bones:hover {
+    background-image: url(../img/game-bones.gif);
+  }
+  .project-dote-ux:hover {
+    background-image: url(../img/project-dote-ux.jpg);
+  }
+  .project-mwm:hover {
+    background-image: url(../img/game-mwm.gif);
+  }
+  .project-drtb:hover {
+    background-image: url(../img/game-drtb.gif);
+  }
+  .project-scanlines:hover {
+    background-image: url(../img/game-scanlines-gp.gif);
+  }
+  .project-kura:hover {
+  	background-image: url(../img/game-kura0.gif);
+  }
+}
 
 .project {
-	max-width: 300px;
-  width: 100%;
-	height: 225px;
 	background-size: cover;
 	background-position: center;
 	padding: 0 !important;
 
   outline-style: solid;
-  outline-width: thin;
+  outline-color: #444444;
+  outline-width: 1px;
+  outl
   line-height: 18px;
   margin-left: auto;
   margin-right: auto;
+  -webkit-transition: outline-width 0.5s ease-in-out;
+  -moz-transition: outline-width 0.5s ease-in-out;
+  -o-transition: outline-width 0.5s ease-in-out;
+  transition: outline-width 0.5s ease-in-out;
+  -webkit-transition: outline-color 0.8s ease-in-out;
+  -moz-transition: outline-color 0.8s ease-in-out;
+  -o-transition: outline-color 0.8s ease-in-out;
+  transition: outline-color 0.8s ease-in-out;
 }
 
 .project-hover {
-  max-width: 300px;
-	height: 225px;
 	color: #fff;
+  width: 100%;
+  height: 100%;
 	opacity: 0;
+  overflow-y: hidden;
 	-webkit-transition: all 0.5s ease;
 	-moz-transition: all 0.5s ease;
 	-o-transition: all 0.5s ease;
@@ -341,6 +388,8 @@ html {
 }
 
 .project-hover a {
+  width: 100%;
+  height: 100%;
 	color: #72ffc2;
 	/*padding: 2px 12px;
 	border: 2px solid rgba(255, 255, 255, 1);*/
@@ -359,7 +408,8 @@ html {
 }
 
 .project-hover p {
-  font-size: 14px; }
+  font-size: 14px;
+}
 
 .project-hover h2 {
   font-size: 20px;
@@ -369,52 +419,31 @@ html {
     color: #fff; }
 
 .project-scanlines {
-	background-image: url(../img/game-scanlines.gif);
+	background-image: url(../img/game-scanlines-title.jpg);
 }
-.project-scanlines:hover {
-  background-image: url(../img/game-scanlines-gp.gif);
-}
-
 .project-drtb {
-	background-image: url(../img/game-drtb.jpg);
+	background-image: url(../img/game-drtb-title.jpg);
 }
-.project-drtb:hover {
-  background-image: url(../img/game-drtb.gif);
-}
-
 .project-mwm {
-	background-image: url(../img/game-mwm.jpg);
+	background-image: url(../img/game-mwm-title.jpg);
 }
-.project-mwm:hover {
-  background-image: url(../img/game-mwm.gif);
-}
-
 .project-gstq {
-	background-image: url(../img/game-gstq.jpg);
+	background-image: url(../img/game-gstq-title.jpg);
 }
-.project-gstq:hover {
-  background-image: url(../img/game-gstq.gif);
-}
-
 .project-bones {
 	background-image: url(../img/game-bones.jpg);
 }
-.project-bones:hover {
-  background-image: url(../img/game-bones.gif);
-}
-
 .project-dote-ux {
 	background-image: url(../img/project-dote-ux.jpg);
 }
-.project-dote-ux:hover {
-  background-image: url(../img/project-dote-ux.jpg);
+.project-kura {
+	background-image: url(../img/game-kura-title.png);
 }
 
-.default-link{
+.default-link {
   /* all rules required to make the whole div clickable */
   position:absolute;
   width:100%;
-  max-width: 300px;
   height:100%;
   top:0;
   left:0;

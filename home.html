@@ -37,40 +37,18 @@
 
       $(document).ready(function() {
 
-        // on load of the page: switch to the currently selected tab
-        if(window.location.hash) {
-          $('.active[data-toggle="tabajax"]').removeClass(function() {return "active"});
-          var hash = window.location.hash; //Puts hash in variable
-          var hashTab = $('.list-group-item-action').filter(function(){ return $(this).data("target") == hash});
+        $('.active[data-toggle="tabajax"]').each(function(e) {
+          var $this = $(this),
+            loadurl = $this.attr('href'),
+            targ = $this.attr('data-target');
 
-          hashTab.each(function(e) {
-            var $this = $(this),
-              loadurl = $this.attr('href'),
-              targ = $this.attr('data-target');
-
-            $.get(loadurl, function(data) {
-              $(targ).html(data);
-            });
-
-            $this.tab('show');
-            hashTab.addClass(function() {return "active"});
-            return false;
+          $.get(loadurl, function(data) {
+            $(targ).html(data);
           });
-        } else {
-          // Fragment doesn't exist
-          $('.active[data-toggle="tabajax"]').each(function(e) {
-            var $this = $(this),
-              loadurl = $this.attr('href'),
-              targ = $this.attr('data-target');
 
-            $.get(loadurl, function(data) {
-              $(targ).html(data);
-            });
-
-            $this.tab('show');
-            return false;
-          });
-          }
+          $this.tab('show');
+          return false;
+        });
 
         $('[data-toggle="tabajax"]').click(function(e) {
           var $this = $(this),
@@ -98,7 +76,43 @@
           return false;
         });
 
+        /*$('#workList a').on('click', function(event) {
+            var target = $('#body');
 
+            event.preventDefault();
+            if( target.length ) {
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 500);
+            }
+        });*/
+
+        /*$('a[data-toggle="list"]').on('shown.bs.tab', function (e) {
+          var target = $(e.target).attr("href") // activated tab
+          if ($(target).is(':empty')) {
+            $.ajax({
+              type: "GET",
+              url: "/article/",
+              error: function(data){
+                alert("There was a problem");
+              },
+              success: function(data){
+                $(target).html(data);
+              }
+          })
+         }
+       })*/
+
+        // store the currently selected tab in the hash value
+
+        /*$("#workList a").on("shown.bs.tab", function(e) {
+          var id = $(e.target).attr("href").substr(1);
+          window.location.hash = id;
+        });
+
+        // on load of the page: switch to the currently selected tab
+        var hash = window.location.hash;
+        $('#workList a[href="' + hash + '"]').tab('show');*/
       });
 
       function toggleVideo(state) {
@@ -201,11 +215,14 @@
   <div class="block-inverse app-header"
   style="background-repeat:repeat; background-image: url(assets/img/cartographer2.png);">
 
-    <div class="container app-navbar">
-    <nav class="navbar navbar-toggleable-sm" style="justify-content: center; max-width: 1000px;  margin:0 auto;">
+    <div class="container">
+    <nav class="" style="justify-content: center; max-width: 100%;  margin:0 auto;">
 
-      <div class="title">
-      <a href="index.html">
+      <div style="width:0; margin: auto;">
+
+      </div>
+
+
       <div class="media mr-auto hidden-sm-down" style="min-width: 600px">
       <img class="mr-4 hidden-xs-down profPic rounded-circle" src="david-sm.jpg" alt="photo">
       <div class="media-body my-auto" >
@@ -224,35 +241,33 @@
           </h3>
         </div>
       </div>
-      </a>
-      </div>
+
 
       <div style="width:0; margin: auto;">
 
       </div>
 
-      <div class="hidden-sm-down text-uppercase">
+      <!--<div class="hidden-sm-down text-uppercase">
         <ul class="navbar-nav flex-column">
           <li class="nav-item px-1 ">
             <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item px-1 ">
-            <a class="nav-link" href="work.html" style="color: #FFFFFF;">Work</a>
+            <a class="nav-link" href="work.html">Work</a>
           </li>
           <li class="nav-item px-1 ">
             <a class="nav-link" href="https://loficacti.itch.io/">itch.io</a>
-          </li>
+          </li>-->
           <!--<li class="nav-item px-1 ">
             <a class="nav-link" href="blog.html">Blog</a>
           </li>-->
-          <li class="nav-item px-1 ">
+          <!--<li class="nav-item px-1 ">
             <a class="nav-link" href="https://drive.google.com/open?id=1gSE_x0urz5r4x8SajDPLCqta7k2CJtfZ" target="_blank">Resume</a>
           </li>
         </ul>
-      </div>
+      </div>-->
 
-      <div class="title">
-      <a href="index.html">
+
       <div class="hidden-md-up text-xs-center">
       <span class="my-auto" >
         <img class="profPic rounded-circle" src="david-sm.jpg" alt="photo">
@@ -274,29 +289,29 @@
         </h3>
       </span>
     </div>
-    </a>
-    </div>
 
 
-      <div class="hidden-md-up text-uppercase">
+
+
+      <!--<div class="hidden-md-up text-uppercase">
         <ul class="navbar-nav flex-row">
           <li class="nav-item px-1 ">
             <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item px-1 ">
-            <a class="nav-link" href="work.html" style="color: #FFFFFF;">Work</a>
+            <a class="nav-link" href="work.html">Work</a>
           </li>
           <li class="nav-item px-1 ">
             <a class="nav-link" href="https://loficacti.itch.io/">itch.io</a>
-          </li>
+          </li>-->
           <!--<li class="nav-item px-1 ">
             <a class="nav-link" href="blog.html">Blog</a>
           </li>-->
-          <li class="nav-item px-1 ">
+          <!--<li class="nav-item px-1 ">
             <a class="nav-link" href="https://drive.google.com/open?id=1gSE_x0urz5r4x8SajDPLCqta7k2CJtfZ" target="_blank">Resume</a>
           </li>
         </ul>
-      </div>
+      </div>-->
 
     </nav>
   </div>
@@ -305,6 +320,55 @@
 </section>
 
 <section id="body">
+
+  <div class="block app-about py-5">
+  <div class="container">
+      <section>
+          <div class="row">
+              <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                  <div class="mytextdiv">
+                    <h3 class="mytexttitle">
+                      About Me
+                    </h3>
+                    <div class="divider"></div>
+                  </div>
+                  <p>I'm a young game developer living in Dallas, Texas.</p>
+                  <p>My primary skill set includes gameplay programming and user experience design,
+                      but I take interest in all things interactive.
+                      I have a strong sense of design, I enjoy getting dirty with code, and I am passionate about delivering positive, responsive user experiences.
+                  </p>
+
+                  <p><span class="fa fa-code"></span><strong> Languages:</strong><br/>C#, C++, Java, Lua, GML, HTML, CSS, JavaScript</p>
+                  <p><span class="fa fa-gear"></span><strong> Toolkit:</strong><br/>Unity, UE4, GM:S, Visual Studio, Eclipse, Atom, Adobe Creative, Sketch, Aseprite</p>
+                  <p><span class="fa fa-bolt"></span><strong> Specializations:</strong><br/>gameplay programming, systems design, interaction design, virtual sensation</p>
+
+                  <p  style="text-align: left;">
+                    <br>
+                    <a class="btn btn-primary mb-2" style="width:16em;" href="assets/David McCullough Resume 2017.pdf">Download Resume</a>
+                  </p>
+              </div>
+
+              <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <div class="mytextdiv">
+                    <h3 class="mytexttitle">
+                      Contact
+                    </h3>
+                    <div class="divider"></div>
+                </div>
+                  <p>
+                      Email <br>
+                      <a href="mailto:davidmcculloughw@gmail.com">davidmcculloughw@gmail.com</a>
+                  </p>
+                  <p>
+                      Twitter <br>
+                      <a href="https://twitter.com/loficacti">@LofiCacti</a>
+                  </p>
+                  <p>Drop me a line—I am currently looking for work, and I'm always eager to collaborate on cool projects!</a></p>
+              </div>
+          </div>
+      </section>
+  </div>
+  </div>
 
 <div class="block app-work">
   <div class="container">
